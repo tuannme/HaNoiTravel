@@ -74,12 +74,18 @@ EOM
   esac
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_resource "FBSDKCoreKit/FacebookSDKStrings.bundle"
+  install_resource "GTMOAuth2/Source/Touch/GTMOAuth2ViewTouch.xib"
   install_resource "GoogleMaps/Subspecs/Maps/Frameworks/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle"
   install_resource "GooglePlaces/Frameworks/GooglePlaces.framework/Versions/A/Resources/GooglePlaces.bundle"
+  install_resource "GoogleSignIn/Resources/GoogleSignIn.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_resource "FBSDKCoreKit/FacebookSDKStrings.bundle"
+  install_resource "GTMOAuth2/Source/Touch/GTMOAuth2ViewTouch.xib"
   install_resource "GoogleMaps/Subspecs/Maps/Frameworks/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle"
   install_resource "GooglePlaces/Frameworks/GooglePlaces.framework/Versions/A/Resources/GooglePlaces.bundle"
+  install_resource "GoogleSignIn/Resources/GoogleSignIn.bundle"
 fi
 
 mkdir -p "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"

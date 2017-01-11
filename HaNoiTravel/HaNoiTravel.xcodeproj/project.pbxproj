@@ -20,6 +20,11 @@
 		1A1F8A271E24C28B00E2A0FA /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1F8A261E24C28B00E2A0FA /* LoginViewController.m */; };
 		1A1F8A2D1E24C7E800E2A0FA /* bg_field_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A1F8A2C1E24C7E800E2A0FA /* bg_field_up.png */; };
 		1A1F8A2F1E24CA4200E2A0FA /* bg_field_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A1F8A2E1E24CA4200E2A0FA /* bg_field_down.png */; };
+		1A1F8A321E25D22100E2A0FA /* ic_facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A1F8A301E25D22100E2A0FA /* ic_facebook.png */; };
+		1A1F8A331E25D22100E2A0FA /* ic_google.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A1F8A311E25D22100E2A0FA /* ic_google.png */; };
+		1A1F8A361E260A2900E2A0FA /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1F8A351E260A2900E2A0FA /* SignUpViewController.m */; };
+		1A1F8A391E260DA400E2A0FA /* SignUpSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1F8A381E260DA400E2A0FA /* SignUpSegue.m */; };
+		1A1F8A3C1E26300200E2A0FA /* ic_close.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A1F8A3B1E26300200E2A0FA /* ic_close.png */; };
 		7BE147CDA53F32D7A7C89222 /* libPods-HaNoiTravel.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C1AC77D4C49CB256DBE58AA /* libPods-HaNoiTravel.a */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +69,13 @@
 		1A1F8A261E24C28B00E2A0FA /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		1A1F8A2C1E24C7E800E2A0FA /* bg_field_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_field_up.png; sourceTree = "<group>"; };
 		1A1F8A2E1E24CA4200E2A0FA /* bg_field_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_field_down.png; sourceTree = "<group>"; };
+		1A1F8A301E25D22100E2A0FA /* ic_facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_facebook.png; sourceTree = "<group>"; };
+		1A1F8A311E25D22100E2A0FA /* ic_google.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_google.png; sourceTree = "<group>"; };
+		1A1F8A341E260A2900E2A0FA /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		1A1F8A351E260A2900E2A0FA /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		1A1F8A371E260DA400E2A0FA /* SignUpSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpSegue.h; sourceTree = "<group>"; };
+		1A1F8A381E260DA400E2A0FA /* SignUpSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpSegue.m; sourceTree = "<group>"; };
+		1A1F8A3B1E26300200E2A0FA /* ic_close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_close.png; sourceTree = "<group>"; };
 		6C1AC77D4C49CB256DBE58AA /* libPods-HaNoiTravel.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HaNoiTravel.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F8408FA8DF0472614964C22 /* Pods-HaNoiTravel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HaNoiTravel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HaNoiTravel/Pods-HaNoiTravel.debug.xcconfig"; sourceTree = "<group>"; };
 		98E89EB3F93B6D26F79BB7D7 /* Pods-HaNoiTravel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HaNoiTravel.release.xcconfig"; path = "Pods/Target Support Files/Pods-HaNoiTravel/Pods-HaNoiTravel.release.xcconfig"; sourceTree = "<group>"; };
@@ -179,6 +191,8 @@
 			children = (
 				1A1F8A251E24C28B00E2A0FA /* LoginViewController.h */,
 				1A1F8A261E24C28B00E2A0FA /* LoginViewController.m */,
+				1A1F8A341E260A2900E2A0FA /* SignUpViewController.h */,
+				1A1F8A351E260A2900E2A0FA /* SignUpViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -193,6 +207,8 @@
 		1A1F8A241E24C25900E2A0FA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1A1F8A371E260DA400E2A0FA /* SignUpSegue.h */,
+				1A1F8A381E260DA400E2A0FA /* SignUpSegue.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -200,6 +216,7 @@
 		1A1F8A281E24C6CF00E2A0FA /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				1A1F8A3A1E26300200E2A0FA /* Icon */,
 				1A1F8A291E24C72100E2A0FA /* Login */,
 			);
 			name = Resource;
@@ -208,11 +225,22 @@
 		1A1F8A291E24C72100E2A0FA /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				1A1F8A301E25D22100E2A0FA /* ic_facebook.png */,
+				1A1F8A311E25D22100E2A0FA /* ic_google.png */,
 				1A1F8A2E1E24CA4200E2A0FA /* bg_field_down.png */,
 				1A1F8A2C1E24C7E800E2A0FA /* bg_field_up.png */,
 			);
 			name = Login;
 			path = Resource/Login;
+			sourceTree = "<group>";
+		};
+		1A1F8A3A1E26300200E2A0FA /* Icon */ = {
+			isa = PBXGroup;
+			children = (
+				1A1F8A3B1E26300200E2A0FA /* ic_close.png */,
+			);
+			name = Icon;
+			path = Resource/Icon;
 			sourceTree = "<group>";
 		};
 		337757E6D50635DCECACAA73 /* Frameworks */ = {
@@ -339,10 +367,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A1F8A331E25D22100E2A0FA /* ic_google.png in Resources */,
 				163570411D5B02B50093CDF5 /* LaunchScreen.storyboard in Resources */,
 				1A1F8A211E249E7300E2A0FA /* GoogleService-Info.plist in Resources */,
+				1A1F8A321E25D22100E2A0FA /* ic_facebook.png in Resources */,
 				1635703E1D5B02B50093CDF5 /* Assets.xcassets in Resources */,
 				1A1F8A2F1E24CA4200E2A0FA /* bg_field_down.png in Resources */,
+				1A1F8A3C1E26300200E2A0FA /* ic_close.png in Resources */,
 				1635703C1D5B02B50093CDF5 /* Main.storyboard in Resources */,
 				1A1F8A2D1E24C7E800E2A0FA /* bg_field_up.png in Resources */,
 			);
@@ -417,8 +448,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A1F8A391E260DA400E2A0FA /* SignUpSegue.m in Sources */,
 				163570361D5B02B50093CDF5 /* AppDelegate.m in Sources */,
 				163570331D5B02B50093CDF5 /* main.m in Sources */,
+				1A1F8A361E260A2900E2A0FA /* SignUpViewController.m in Sources */,
 				163570691D5C24AD0093CDF5 /* MainViewController.m in Sources */,
 				163570661D5B0B090093CDF5 /* DirectionService.m in Sources */,
 				1A1F8A271E24C28B00E2A0FA /* LoginViewController.m in Sources */,

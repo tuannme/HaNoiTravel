@@ -8,5 +8,7 @@ target 'HaNoiTravel' do
   pod 'GooglePlaces'
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
-  pod 'Firebase/Auth'
+  pod 'GoogleSignIn'
+  pod 'FBSDKCoreKit'
+  pod 'FBSDKLoginKit'
 end

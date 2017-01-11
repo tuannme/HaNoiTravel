@@ -8,9 +8,14 @@
 
 #import "LoginViewController.h"
 #import <FirebaseAuth/FirebaseAuth.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import "MainViewController.h"
+#import "SignUpSegue.h"
 
+@import GoogleSignIn;
 
-@interface LoginViewController ()<UITextFieldDelegate>
+@interface LoginViewController ()<UITextFieldDelegate,GIDSignInDelegate,GIDSignInUIDelegate,FBSDKLoginButtonDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *loginView;
 @property (weak, nonatomic) IBOutlet UIButton *loginBt;
@@ -19,17 +24,26 @@
 @property (weak, nonatomic) IBOutlet UITextField *passwordTf;
 
 @property (weak, nonatomic) IBOutlet UILabel *forgotPwLb;
-@property (weak, nonatomic) IBOutlet UILabel *createAccLb;
+@property (weak, nonatomic) IBOutlet FBSDKLoginButton *fbLoginBt;
+@property (weak, nonatomic) IBOutlet UIButton *createAccBt;
+
 
 - (IBAction)loginAction:(id)sender;
+- (IBAction)loginGoogleAction:(id)sender;
 
 @end
 
-@implementation LoginViewController
+@implementation LoginViewController{
+    BOOL loginSuccess;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    _fbLoginBt.delegate = self;
+    _fbLoginBt.layer.cornerRadius = 20;
+    _fbLoginBt.clipsToBounds = YES;
+  
     _loginView.layer.cornerRadius = 5.0f;
     _loginView.clipsToBounds = YES;
     
@@ -47,14 +61,10 @@
     _emailTf.delegate = self;
     _passwordTf.delegate = self;
     
-    UITapGestureRecognizer *tapGesture1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(forgotPwAction)];
-    [_forgotPwLb addGestureRecognizer:tapGesture1];
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(forgotPwAction)];
+    [_forgotPwLb addGestureRecognizer:tapGesture];
     _forgotPwLb.userInteractionEnabled = YES;
-    
-    UITapGestureRecognizer *tapGesture2 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(createNewAccAction)];
-    [_createAccLb addGestureRecognizer:tapGesture2];
-    _createAccLb.userInteractionEnabled = YES;
-    
+
 }
 
 - (void) forgotPwAction{
@@ -94,7 +104,83 @@
                                  
                              }];
     }
+}
+
+- (IBAction)loginGoogleAction:(id)sender {
+    [GIDSignIn sharedInstance].uiDelegate = self;
+    [GIDSignIn sharedInstance].delegate = self;
+    [[GIDSignIn sharedInstance] signIn];
+    
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue isKindOfClass:[SignUpSegue class]]) {
+        // Set the start point for the animation to center of the button for the animation
+        ((SignUpSegue *)segue).originatingPoint = self.createAccBt.center;
+    }
+}
+
+
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender{
+    //return loginSuccess;
+    return YES;
+}
+
+
+- (void)perform{
+    
+}
+
+#pragma mark - GOOGLE LOGIN
+- (void)signIn:(GIDSignIn *)signIn didSignInForUser:(GIDGoogleUser *)user
+     withError:(NSError *)error {
+    if (error == nil) {
+        GIDAuthentication *authentication = user.authentication;
+        FIRAuthCredential *credential = [FIRGoogleAuthProvider credentialWithIDToken:authentication.idToken
+                                                                         accessToken:authentication.accessToken];
+        [self loginWithCredential:credential];
+    } else{
+        NSLog(@"%@", error.localizedDescription);
+    }
+}
+- (void)signIn:(GIDSignIn *)signIn didDisconnectWithUser:(GIDGoogleUser *)user
+     withError:(NSError *)error {
     
     
+}
+
+
+#pragma mark - FB LOGIN
+- (void)loginButton:(FBSDKLoginButton *)loginButton
+didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
+              error:(NSError *)error {
+    if (error == nil) {
+        FIRAuthCredential *credential = [FIRFacebookAuthProvider
+                                         credentialWithAccessToken:[FBSDKAccessToken currentAccessToken]
+                                         .tokenString];
+        [self loginWithCredential:credential];
+    } else {
+        NSLog(@"%@", error.localizedDescription);
+    }
+}
+
+- (void)loginButtonDidLogOut:(FBSDKLoginButton *)loginButton{
+    
+}
+
+- (void) loginWithCredential:(FIRAuthCredential*)credential{
+    
+    [[FIRAuth auth] signInWithCredential:credential
+                              completion:^(FIRUser *user, NSError *error) {
+                                  if (!error) {
+                                      
+                                      UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                                      MainViewController *mainVC = [sb instantiateViewControllerWithIdentifier:@"MainViewController"];
+                                      [self.navigationController pushViewController:mainVC animated:YES];
+                                      
+                                      return;
+                                  }
+                              }
+     ];
 }
 @end
