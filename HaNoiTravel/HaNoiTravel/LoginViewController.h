@@ -10,4 +10,7 @@
 
 @interface LoginViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITextField *emailTf;
+@property (weak, nonatomic) IBOutlet UITextField *passwordTf;
+
 @end

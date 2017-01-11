@@ -7,6 +7,13 @@
 //
 
 #import "SignUpViewController.h"
+#import "NSString+Utils.h"
+#import "Utils.h"
+#import "SpinnerView.h"
+#import "LoginViewController.h"
+
+
+@import Firebase;
 
 @interface SignUpViewController ()
 
@@ -31,13 +38,13 @@
     
     _signUpBt.clipsToBounds = YES;
     _signUpBt.layer.cornerRadius = 5.0f;
-
+    
     _signUpBt.layer.masksToBounds = NO;
     _signUpBt.layer.shadowOpacity = 1.f;
     _signUpBt.layer.shadowOffset = CGSizeMake(0, 6);
     _signUpBt.layer.shadowColor = [UIColor colorWithRed:254.0/255.0 green:181/255.0 blue:173/255.0 alpha:1.0].CGColor;
     
-  
+    
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showPolicy)];
     _policyLb.userInteractionEnabled = YES;
     [_policyLb addGestureRecognizer:tapGesture];
@@ -66,5 +73,43 @@
     [self.view removeFromSuperview];
 }
 - (IBAction)signUpAction:(id)sender {
+    if(_emailTf.text.length && [_emailTf.text isValidEmail]){
+        if(_passwordTf.text.length >= 6){
+            if( [_passwordTf.text isEqualToString:_repasswordTf.text]){
+                
+                [[SpinnerView shareInstance] startAnimation];
+                
+                [[FIRAuth auth]
+                 createUserWithEmail:_emailTf.text
+                 password:_passwordTf.text
+                 completion:^(FIRUser *_Nullable user,
+                              NSError *_Nullable error) {
+                     
+                     if(error == nil){
+                         UIViewController *loginVC = self.parentViewController;
+                         if([loginVC isKindOfClass:[LoginViewController class]]){
+                             [(LoginViewController*)loginVC emailTf].text = _emailTf.text;
+                             [(LoginViewController*)loginVC passwordTf].text = _passwordTf.text;
+                         }
+                         [self closeAction:nil];
+                         [Utils showAlert:nil message:@"sign up success !"];
+                     }else{
+                         [Utils showAlert:nil message:[error.userInfo objectForKey:@"NSLocalizedDescription"]];
+                     }
+                     [[SpinnerView shareInstance] stopAnimation];
+                     
+                 }];
+                
+            }else{
+                [Utils showAlert:nil message:@"Password don't match !Try again !"];
+            }
+        }else{
+            [Utils showAlert:nil message:@"Please use at least 6 characters"];
+        }
+    }else{
+        [Utils showAlert:nil message:@"Please enter a valid email !"];
+    }
+    
+    
 }
 @end

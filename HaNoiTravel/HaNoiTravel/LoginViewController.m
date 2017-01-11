@@ -12,6 +12,8 @@
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import "MainViewController.h"
 #import "SignUpSegue.h"
+#import "SpinnerView.h"
+#import "Utils.h"
 
 @import GoogleSignIn;
 
@@ -19,9 +21,6 @@
 
 @property (weak, nonatomic) IBOutlet UIView *loginView;
 @property (weak, nonatomic) IBOutlet UIButton *loginBt;
-
-@property (weak, nonatomic) IBOutlet UITextField *emailTf;
-@property (weak, nonatomic) IBOutlet UITextField *passwordTf;
 
 @property (weak, nonatomic) IBOutlet UILabel *forgotPwLb;
 @property (weak, nonatomic) IBOutlet FBSDKLoginButton *fbLoginBt;
@@ -34,7 +33,7 @@
 @end
 
 @implementation LoginViewController{
-    BOOL loginSuccess;
+    
 }
 
 - (void)viewDidLoad {
@@ -43,7 +42,7 @@
     _fbLoginBt.delegate = self;
     _fbLoginBt.layer.cornerRadius = 20;
     _fbLoginBt.clipsToBounds = YES;
-  
+    
     _loginView.layer.cornerRadius = 5.0f;
     _loginView.clipsToBounds = YES;
     
@@ -64,7 +63,7 @@
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(forgotPwAction)];
     [_forgotPwLb addGestureRecognizer:tapGesture];
     _forgotPwLb.userInteractionEnabled = YES;
-
+    
 }
 
 - (void) forgotPwAction{
@@ -95,13 +94,18 @@
     
     if(_emailTf.text.length && _passwordTf.text.length){
         
+         [[SpinnerView shareInstance] startAnimation];
+        
         [[FIRAuth auth] signInWithEmail:_emailTf.text
                                password:_passwordTf.text
                              completion:^(FIRUser *user, NSError *error) {
                                  
-                                 NSLog(@"error %@",error);
-                                 
-                                 
+                                 [[SpinnerView shareInstance] stopAnimation];
+                                 if(error == nil){
+                                     [self gotoMainViewController];
+                                 }else{
+                                     [Utils showAlert:@"Login falure !" message:[error.userInfo objectForKey:@"NSLocalizedDescription"]];
+                                 }
                              }];
     }
 }
@@ -122,7 +126,9 @@
 
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender{
-    //return loginSuccess;
+    if([identifier isEqualToString:@"loginSegue"]){
+        return NO;
+    }
     return YES;
 }
 
@@ -173,14 +179,18 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
     [[FIRAuth auth] signInWithCredential:credential
                               completion:^(FIRUser *user, NSError *error) {
                                   if (!error) {
-                                      
-                                      UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                                      MainViewController *mainVC = [sb instantiateViewControllerWithIdentifier:@"MainViewController"];
-                                      [self.navigationController pushViewController:mainVC animated:YES];
-                                      
-                                      return;
+                                      [self gotoMainViewController];
+                                  }else{
+                                      [Utils showAlert:@"Login falure !" message:error.userInfo.description];
                                   }
                               }
      ];
 }
+
+- (void) gotoMainViewController{
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    MainViewController *mainVC = [sb instantiateViewControllerWithIdentifier:@"MainViewController"];
+    [self.navigationController pushViewController:mainVC animated:YES];
+}
+
 @end

@@ -26,6 +26,12 @@
 		1A1F8A391E260DA400E2A0FA /* SignUpSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1F8A381E260DA400E2A0FA /* SignUpSegue.m */; };
 		1A1F8A3C1E26300200E2A0FA /* ic_close.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A1F8A3B1E26300200E2A0FA /* ic_close.png */; };
 		7BE147CDA53F32D7A7C89222 /* libPods-HaNoiTravel.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C1AC77D4C49CB256DBE58AA /* libPods-HaNoiTravel.a */; };
+		CA42D8D91E26615A00A1F574 /* ic_close_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = CA42D8D81E26615A00A1F574 /* ic_close_blue.png */; };
+		CA42D8DC1E266C7800A1F574 /* NSString+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = CA42D8DB1E266C7800A1F574 /* NSString+Utils.m */; };
+		CA42D8DF1E266CE800A1F574 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = CA42D8DE1E266CE800A1F574 /* Utils.m */; };
+		CA42D8E21E267E7600A1F574 /* SpinnerView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA42D8E11E267E7600A1F574 /* SpinnerView.m */; };
+		CA42D8E81E268C0500A1F574 /* spinner_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = CA42D8E61E268C0500A1F574 /* spinner_blue.png */; };
+		CA42D8E91E268C0500A1F574 /* spinner_red.png in Resources */ = {isa = PBXBuildFile; fileRef = CA42D8E71E268C0500A1F574 /* spinner_red.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +85,15 @@
 		6C1AC77D4C49CB256DBE58AA /* libPods-HaNoiTravel.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HaNoiTravel.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F8408FA8DF0472614964C22 /* Pods-HaNoiTravel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HaNoiTravel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HaNoiTravel/Pods-HaNoiTravel.debug.xcconfig"; sourceTree = "<group>"; };
 		98E89EB3F93B6D26F79BB7D7 /* Pods-HaNoiTravel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HaNoiTravel.release.xcconfig"; path = "Pods/Target Support Files/Pods-HaNoiTravel/Pods-HaNoiTravel.release.xcconfig"; sourceTree = "<group>"; };
+		CA42D8D81E26615A00A1F574 /* ic_close_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_close_blue.png; sourceTree = "<group>"; };
+		CA42D8DA1E266C7800A1F574 /* NSString+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Utils.h"; sourceTree = "<group>"; };
+		CA42D8DB1E266C7800A1F574 /* NSString+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Utils.m"; sourceTree = "<group>"; };
+		CA42D8DD1E266CE800A1F574 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		CA42D8DE1E266CE800A1F574 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		CA42D8E01E267E7600A1F574 /* SpinnerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpinnerView.h; sourceTree = "<group>"; };
+		CA42D8E11E267E7600A1F574 /* SpinnerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpinnerView.m; sourceTree = "<group>"; };
+		CA42D8E61E268C0500A1F574 /* spinner_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spinner_blue.png; sourceTree = "<group>"; };
+		CA42D8E71E268C0500A1F574 /* spinner_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spinner_red.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +215,12 @@
 		1A1F8A231E24C24F00E2A0FA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CA42D8DA1E266C7800A1F574 /* NSString+Utils.h */,
+				CA42D8DB1E266C7800A1F574 /* NSString+Utils.m */,
+				CA42D8DD1E266CE800A1F574 /* Utils.h */,
+				CA42D8DE1E266CE800A1F574 /* Utils.m */,
+				CA42D8E01E267E7600A1F574 /* SpinnerView.h */,
+				CA42D8E11E267E7600A1F574 /* SpinnerView.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -216,6 +237,7 @@
 		1A1F8A281E24C6CF00E2A0FA /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				CA42D8E31E267F5200A1F574 /* Spinner */,
 				1A1F8A3A1E26300200E2A0FA /* Icon */,
 				1A1F8A291E24C72100E2A0FA /* Login */,
 			);
@@ -237,6 +259,7 @@
 		1A1F8A3A1E26300200E2A0FA /* Icon */ = {
 			isa = PBXGroup;
 			children = (
+				CA42D8D81E26615A00A1F574 /* ic_close_blue.png */,
 				1A1F8A3B1E26300200E2A0FA /* ic_close.png */,
 			);
 			name = Icon;
@@ -258,6 +281,16 @@
 				98E89EB3F93B6D26F79BB7D7 /* Pods-HaNoiTravel.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		CA42D8E31E267F5200A1F574 /* Spinner */ = {
+			isa = PBXGroup;
+			children = (
+				CA42D8E61E268C0500A1F574 /* spinner_blue.png */,
+				CA42D8E71E268C0500A1F574 /* spinner_red.png */,
+			);
+			name = Spinner;
+			path = Resource/Spinner;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -367,15 +400,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA42D8E81E268C0500A1F574 /* spinner_blue.png in Resources */,
 				1A1F8A331E25D22100E2A0FA /* ic_google.png in Resources */,
 				163570411D5B02B50093CDF5 /* LaunchScreen.storyboard in Resources */,
 				1A1F8A211E249E7300E2A0FA /* GoogleService-Info.plist in Resources */,
 				1A1F8A321E25D22100E2A0FA /* ic_facebook.png in Resources */,
 				1635703E1D5B02B50093CDF5 /* Assets.xcassets in Resources */,
 				1A1F8A2F1E24CA4200E2A0FA /* bg_field_down.png in Resources */,
+				CA42D8D91E26615A00A1F574 /* ic_close_blue.png in Resources */,
 				1A1F8A3C1E26300200E2A0FA /* ic_close.png in Resources */,
 				1635703C1D5B02B50093CDF5 /* Main.storyboard in Resources */,
 				1A1F8A2D1E24C7E800E2A0FA /* bg_field_up.png in Resources */,
+				CA42D8E91E268C0500A1F574 /* spinner_red.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,6 +484,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA42D8DF1E266CE800A1F574 /* Utils.m in Sources */,
 				1A1F8A391E260DA400E2A0FA /* SignUpSegue.m in Sources */,
 				163570361D5B02B50093CDF5 /* AppDelegate.m in Sources */,
 				163570331D5B02B50093CDF5 /* main.m in Sources */,
@@ -455,6 +492,8 @@
 				163570691D5C24AD0093CDF5 /* MainViewController.m in Sources */,
 				163570661D5B0B090093CDF5 /* DirectionService.m in Sources */,
 				1A1F8A271E24C28B00E2A0FA /* LoginViewController.m in Sources */,
+				CA42D8E21E267E7600A1F574 /* SpinnerView.m in Sources */,
+				CA42D8DC1E266C7800A1F574 /* NSString+Utils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
