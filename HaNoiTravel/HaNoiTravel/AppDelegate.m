@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import <GoogleMaps/GoogleMaps.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import "SlideMenuViewController.h"
+
 @import Firebase;
 @import GoogleSignIn;
 
@@ -32,6 +34,7 @@
     if (!status) {
         NSLog(@"Error signing out: %@", signOutError);
     }
+
     
     return YES;
 }

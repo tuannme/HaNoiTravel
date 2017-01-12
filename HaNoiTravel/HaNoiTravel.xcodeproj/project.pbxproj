@@ -26,6 +26,7 @@
 		1A1F8A391E260DA400E2A0FA /* SignUpSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1F8A381E260DA400E2A0FA /* SignUpSegue.m */; };
 		1A1F8A3C1E26300200E2A0FA /* ic_close.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A1F8A3B1E26300200E2A0FA /* ic_close.png */; };
 		7BE147CDA53F32D7A7C89222 /* libPods-HaNoiTravel.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C1AC77D4C49CB256DBE58AA /* libPods-HaNoiTravel.a */; };
+		CA3781F51E27C54900328C2D /* SlideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3781F31E27C54900328C2D /* SlideMenuViewController.m */; };
 		CA42D8D91E26615A00A1F574 /* ic_close_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = CA42D8D81E26615A00A1F574 /* ic_close_blue.png */; };
 		CA42D8DC1E266C7800A1F574 /* NSString+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = CA42D8DB1E266C7800A1F574 /* NSString+Utils.m */; };
 		CA42D8DF1E266CE800A1F574 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = CA42D8DE1E266CE800A1F574 /* Utils.m */; };
@@ -85,6 +86,8 @@
 		6C1AC77D4C49CB256DBE58AA /* libPods-HaNoiTravel.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HaNoiTravel.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F8408FA8DF0472614964C22 /* Pods-HaNoiTravel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HaNoiTravel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HaNoiTravel/Pods-HaNoiTravel.debug.xcconfig"; sourceTree = "<group>"; };
 		98E89EB3F93B6D26F79BB7D7 /* Pods-HaNoiTravel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HaNoiTravel.release.xcconfig"; path = "Pods/Target Support Files/Pods-HaNoiTravel/Pods-HaNoiTravel.release.xcconfig"; sourceTree = "<group>"; };
+		CA3781F21E27C54900328C2D /* SlideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideMenuViewController.h; sourceTree = "<group>"; };
+		CA3781F31E27C54900328C2D /* SlideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideMenuViewController.m; sourceTree = "<group>"; };
 		CA42D8D81E26615A00A1F574 /* ic_close_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_close_blue.png; sourceTree = "<group>"; };
 		CA42D8DA1E266C7800A1F574 /* NSString+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Utils.h"; sourceTree = "<group>"; };
 		CA42D8DB1E266C7800A1F574 /* NSString+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Utils.m"; sourceTree = "<group>"; };
@@ -204,6 +207,7 @@
 		1A1F8A221E24C24300E2A0FA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				CA3781F71E27C54E00328C2D /* SlideMenu */,
 				1A1F8A251E24C28B00E2A0FA /* LoginViewController.h */,
 				1A1F8A261E24C28B00E2A0FA /* LoginViewController.m */,
 				1A1F8A341E260A2900E2A0FA /* SignUpViewController.h */,
@@ -281,6 +285,15 @@
 				98E89EB3F93B6D26F79BB7D7 /* Pods-HaNoiTravel.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		CA3781F71E27C54E00328C2D /* SlideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				CA3781F21E27C54900328C2D /* SlideMenuViewController.h */,
+				CA3781F31E27C54900328C2D /* SlideMenuViewController.m */,
+			);
+			name = SlideMenu;
 			sourceTree = "<group>";
 		};
 		CA42D8E31E267F5200A1F574 /* Spinner */ = {
@@ -494,6 +507,7 @@
 				1A1F8A271E24C28B00E2A0FA /* LoginViewController.m in Sources */,
 				CA42D8E21E267E7600A1F574 /* SpinnerView.m in Sources */,
 				CA42D8DC1E266C7800A1F574 /* NSString+Utils.m in Sources */,
+				CA3781F51E27C54900328C2D /* SlideMenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

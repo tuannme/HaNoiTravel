@@ -82,7 +82,7 @@
                                                     if(error == nil){
                                                         [Utils showAlert:nil message:@"Please check your email to reset password !"];
                                                     }else{
-                                                       // [Utils showAlert:@"Falure !" message:[[[error userInfo] description]]]
+                                                        [Utils showAlert:@"Falure !" message:[error.userInfo objectForKey:@"NSLocalizedDescription"]];
                                                     }
                                                     
                                      [[SpinnerView shareInstance] stopAnimation];
