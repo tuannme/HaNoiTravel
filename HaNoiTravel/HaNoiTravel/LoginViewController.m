@@ -14,6 +14,7 @@
 #import "SignUpSegue.h"
 #import "SpinnerView.h"
 #import "Utils.h"
+#import "NSString+Utils.h"
 
 @import GoogleSignIn;
 
@@ -68,11 +69,36 @@
 
 - (void) forgotPwAction{
     
-}
-
-- (void) createNewAccAction{
+    if(_emailTf.text.isValidEmail){
+        [Utils showAlert:@"" message:[NSString stringWithFormat:@"Do you want reset password account %@",_emailTf.text] completion:^(BOOL action){
+           
+            if(action){
+                
+                [[SpinnerView shareInstance] startAnimation];
+                
+                [[FIRAuth auth] sendPasswordResetWithEmail:_emailTf.text
+                                                completion:^(NSError *_Nullable error) {
+                                                    
+                                                    if(error == nil){
+                                                        [Utils showAlert:nil message:@"Please check your email to reset password !"];
+                                                    }else{
+                                                       // [Utils showAlert:@"Falure !" message:[[[error userInfo] description]]]
+                                                    }
+                                                    
+                                     [[SpinnerView shareInstance] stopAnimation];
+                                                    
+                                                }];
+            }
+            
+        }];
+        
+       
+    }
+    
+    
     
 }
+
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
     [self.view endEditing:YES];
