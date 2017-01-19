@@ -9,7 +9,6 @@
 #import "AppDelegate.h"
 #import <GoogleMaps/GoogleMaps.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
-#import "SlideMenuViewController.h"
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 @import Firebase;

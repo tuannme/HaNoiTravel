@@ -12,7 +12,7 @@
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import "MainViewController.h"
 #import "SignUpSegue.h"
-#import "SpinnerView.h"
+#import "DUSpinnerView.h"
 #import "Utils.h"
 #import "User.h"
 #import "NSString+Utils.h"
@@ -122,7 +122,7 @@
     if(_emailTf.text.isValidEmail){
         [Utils showAlert:@"" message:[NSString stringWithFormat:@"Do you want reset password account %@",_emailTf.text] completion:^(BOOL action){
             if(action){
-                [[SpinnerView shareInstance] startAnimation];
+                [[DUSpinnerView shareInstance] startLoading];
                 
                 [[FIRAuth auth] sendPasswordResetWithEmail:_emailTf.text
                                                 completion:^(NSError *_Nullable error) {
@@ -132,7 +132,7 @@
                                                     }else{
                                                         [Utils showAlert:@"Falure !" message:[error.userInfo objectForKey:@"NSLocalizedDescription"]];
                                                     }
-                                                    [[SpinnerView shareInstance] stopAnimation];
+                                                    [[DUSpinnerView shareInstance] stopLoading];
                                                 }];
             }
         }];
@@ -156,13 +156,13 @@
     
     if(_emailTf.text.length && _passwordTf.text.length){
         
-        [[SpinnerView shareInstance] startAnimation];
+        [[DUSpinnerView shareInstance] startLoading];
         
         [[FIRAuth auth] signInWithEmail:_emailTf.text
                                password:_passwordTf.text
                              completion:^(FIRUser *user, NSError *error) {
                                  
-                                 [[SpinnerView shareInstance] stopAnimation];
+                                 [[DUSpinnerView shareInstance] stopLoading];
                                  if(error == nil){
                                      [self setUser:user];
                                      [self gotoMainViewController];
@@ -177,11 +177,11 @@
     [GIDSignIn sharedInstance].uiDelegate = self;
     [GIDSignIn sharedInstance].delegate = self;
     [[GIDSignIn sharedInstance] signIn];
-    [[SpinnerView shareInstance] startAnimation];
+    [[DUSpinnerView shareInstance] startLoading];
 }
 
 - (IBAction)loginFaceBookAction:(id)sender {
-    [[SpinnerView shareInstance] startAnimation];
+    [[DUSpinnerView shareInstance] startLoading];
 }
 
 
@@ -211,7 +211,7 @@
                                                                          accessToken:authentication.accessToken];
         [self loginWithCredential:credential];
     } else{
-        [[SpinnerView shareInstance] stopAnimation];
+        [[DUSpinnerView shareInstance] stopLoading];
         NSLog(@"%@", error.localizedDescription);
     }
     
@@ -231,7 +231,7 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
                                          .tokenString];
         [self loginWithCredential:credential];
     } else {
-        [[SpinnerView shareInstance] stopAnimation];
+        [[DUSpinnerView shareInstance] stopLoading];
         NSLog(@"%@", error.localizedDescription);
     }
 }
@@ -244,7 +244,7 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
     
     [[FIRAuth auth] signInWithCredential:credential
                               completion:^(FIRUser *user, NSError *error) {
-                                  [[SpinnerView shareInstance] stopAnimation];
+                                  [[DUSpinnerView shareInstance] stopLoading];
                                   if (!error) {
                                       [self setUser:user];
                                       [self gotoMainViewController];

@@ -9,7 +9,7 @@
 #import "SignUpViewController.h"
 #import "NSString+Utils.h"
 #import "Utils.h"
-#import "SpinnerView.h"
+#import "DUSpinnerView.h"
 #import "LoginViewController.h"
 
 
@@ -77,7 +77,7 @@
         if(_passwordTf.text.length >= 6){
             if( [_passwordTf.text isEqualToString:_repasswordTf.text]){
                 
-                [[SpinnerView shareInstance] startAnimation];
+                [[DUSpinnerView shareInstance] startLoading];
                 
                 [[FIRAuth auth]
                  createUserWithEmail:_emailTf.text
@@ -96,7 +96,7 @@
                      }else{
                          [Utils showAlert:nil message:[error.userInfo objectForKey:@"NSLocalizedDescription"]];
                      }
-                     [[SpinnerView shareInstance] stopAnimation];
+                     [[DUSpinnerView shareInstance] stopLoading];
                      
                  }];
                 

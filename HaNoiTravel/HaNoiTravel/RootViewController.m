@@ -20,13 +20,10 @@
     
     _menuVC = [[MenuViewController alloc] init];
     [self setLeftViewController:_menuVC];
-    [self setSwipeEnable:YES];
     
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     _loginNavi  = [sb instantiateViewControllerWithIdentifier:@"LoginNavi"];
     [self setMainNavi:_loginNavi];
-
-    
     
 }
 

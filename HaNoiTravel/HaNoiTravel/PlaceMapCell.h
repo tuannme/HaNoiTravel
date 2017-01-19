@@ -11,9 +11,6 @@
 
 @interface PlaceMapCell : UITableViewCell
 
-- (IBAction)searchAction:(id)sender;
-- (IBAction)voiceAction:(id)sender;
-
-@property (weak, nonatomic) IBOutlet MapView *mapView;
+- (void) searchCompletion:(void(^)(NSString*))result;
 
 @end

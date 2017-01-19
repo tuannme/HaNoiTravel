@@ -1,12 +1,12 @@
 //
-//  SlideMenuViewController.m
+//  DUSwipeMenuViewController.m
 //  HaNoiTravel
 //
-//  Created by Nguyen Manh Tuan on 1/12/17.
+//  Created by Nguyen Manh Tuan on 1/19/17.
 //  Copyright © 2017 DREAMUP. All rights reserved.
 //
 
-#import "SlideMenuViewController.h"
+#import "DUSwipeMenuViewController.h"
 
 static CGFloat threshold = 250;
 
@@ -16,7 +16,8 @@ typedef enum {
 }Direction;
 
 
-@interface SlideMenuViewController (){
+
+@interface DUSwipeMenuViewController (){
     CGFloat beginPosition;
     Direction direction;
     CGPoint beginPoint;
@@ -25,10 +26,11 @@ typedef enum {
 
 @end
 
-@implementation SlideMenuViewController{
+@implementation DUSwipeMenuViewController{
     CGFloat screeW;
     CGPoint lastPoint;
 }
+
 
 - (void) setLeftViewController:(UIViewController *)leftViewController{
     _leftViewController = leftViewController;
@@ -142,7 +144,6 @@ typedef enum {
                          }];
     }
 }
-
 
 
 @end
