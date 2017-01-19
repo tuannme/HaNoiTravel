@@ -29,15 +29,13 @@
     frameH = [[UIScreen mainScreen] bounds].size.height;
     frameW = [[UIScreen mainScreen] bounds].size.width;
     
-    _tbView = [[UITableView alloc] initWithFrame:CGRectMake(-10, 0, frameW, frameH)];
+    _tbView = [[UITableView alloc] initWithFrame:CGRectMake(-10, 20, frameW, frameH)];
     _tbView.delegate = self;
     _tbView.dataSource = self;
     [self.view addSubview:_tbView];
 
-    _tbView.backgroundColor = [UIColor colorWithDisplayP3Red:225/255.0 green:140/255.0 blue:100/255.0 alpha:1];
-    
-    
     [_tbView registerNib:[UINib nibWithNibName:@"MenuCell" bundle:nil] forCellReuseIdentifier:@"MenuCell"];
+    _tbView.backgroundColor = [UIColor clearColor];
     
 }
 

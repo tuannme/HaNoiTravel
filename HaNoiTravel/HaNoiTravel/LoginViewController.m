@@ -67,12 +67,13 @@
     [_forgotPwLb addGestureRecognizer:tapGesture];
     _forgotPwLb.userInteractionEnabled = YES;
     
-    CAGradientLayer *layer = [self blueGradient];
-    layer.frame = [[UIScreen mainScreen] bounds];
-    [self.view.layer insertSublayer:layer atIndex:0];
-    
-    
+    /*
+     CAGradientLayer *layer = [self blueGradient];
+     layer.frame = [[UIScreen mainScreen] bounds];
+     [self.view.layer insertSublayer:layer atIndex:0];
+     */
 }
+
 - (CAGradientLayer*) blueGradient {
     
     UIColor *colorOne = [UIColor colorWithRed:(120/255.0) green:(135/255.0) blue:(150/255.0) alpha:1.0];

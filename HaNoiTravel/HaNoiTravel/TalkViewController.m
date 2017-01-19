@@ -1,18 +1,18 @@
 //
-//  FriendViewController.m
+//  TalkViewController.m
 //  HaNoiTravel
 //
-//  Created by Dreamup on 1/13/17.
+//  Created by Dreamup on 1/19/17.
 //  Copyright © 2017 DREAMUP. All rights reserved.
 //
 
-#import "FriendViewController.h"
+#import "TalkViewController.h"
 
-@interface FriendViewController ()
+@interface TalkViewController ()
 
 @end
 
-@implementation FriendViewController
+@implementation TalkViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

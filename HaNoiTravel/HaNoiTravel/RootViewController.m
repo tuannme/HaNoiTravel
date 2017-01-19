@@ -26,8 +26,8 @@
     _loginNavi  = [sb instantiateViewControllerWithIdentifier:@"LoginNavi"];
     [self setMainNavi:_loginNavi];
 
-    self.view.backgroundColor = [UIColor colorWithDisplayP3Red:225/255.0 green:140/255.0 blue:100/255.0 alpha:1];
-
+    
+    
 }
 
 

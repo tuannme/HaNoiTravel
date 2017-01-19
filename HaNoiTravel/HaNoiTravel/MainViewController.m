@@ -15,17 +15,23 @@
 
 @property (weak, nonatomic) IBOutlet UIView *windowsView;
 
-@property (weak, nonatomic) IBOutlet UIButton *grabTravelBtn;
+@property (weak, nonatomic) IBOutlet UIButton *talkBtn;
 @property (weak, nonatomic) IBOutlet UIButton *placeBtn;
-@property (weak, nonatomic) IBOutlet UIButton *accountBtn;
+@property (weak, nonatomic) IBOutlet UIButton *promotionBtn;
 @property (weak, nonatomic) IBOutlet UIView *slideLineView;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *slideLineLeadingConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *talkLeadingConstraint;
 
 
-- (IBAction)grabTravelAction:(id)sender;
+@property (strong,nonatomic) PlaceViewController *placeVC;
+
+
 - (IBAction)placeAction:(id)sender;
-- (IBAction)accountAction:(id)sender;
+- (IBAction)talkAction:(id)sender;
+- (IBAction)promotionAction:(id)sender;
+
+
 
 @end
 
@@ -35,7 +41,7 @@
 @implementation MainViewController{
     CGFloat frameW;
     CGFloat frameH;
-
+    
 }
 
 - (void)viewDidLoad {
@@ -50,13 +56,14 @@
     frameW = [[UIScreen mainScreen]bounds].size.width;
     
     _placeBtn.titleLabel.font = [UIFont boldSystemFontOfSize:14];
-    _grabTravelBtn.titleLabel.font = [UIFont systemFontOfSize:13.5];
-    _accountBtn.titleLabel.font = [UIFont systemFontOfSize:13.5];
+    _talkBtn.titleLabel.font = [UIFont systemFontOfSize:13.5];
+    _promotionBtn.titleLabel.font = [UIFont systemFontOfSize:13.5];
     
-    [_grabTravelBtn setTitleColor:COLOR_BTN_NORMAL forState:UIControlStateNormal];
+    [_talkBtn setTitleColor:COLOR_BTN_NORMAL forState:UIControlStateNormal];
     [_placeBtn setTitleColor:COLOR_BTN_SELECTED  forState:UIControlStateNormal];
-    [_accountBtn setTitleColor:COLOR_BTN_NORMAL forState:UIControlStateNormal];
+    [_promotionBtn setTitleColor:COLOR_BTN_NORMAL forState:UIControlStateNormal];
 
+    
 }
 
 - (void) viewWillAppear:(BOOL)animated{
@@ -70,50 +77,56 @@
 }
 
 
-- (IBAction)grabTravelAction:(id)sender {
-    _grabTravelBtn.titleLabel.font = [UIFont boldSystemFontOfSize:14];
+- (IBAction)talkAction:(id)sender {
+    _talkBtn.titleLabel.font = [UIFont boldSystemFontOfSize:14];
     _placeBtn.titleLabel.font = [UIFont systemFontOfSize:13.5];
-    _accountBtn.titleLabel.font = [UIFont systemFontOfSize:13.5];
+    _promotionBtn.titleLabel.font = [UIFont systemFontOfSize:13.5];
     
-    [_grabTravelBtn setTitleColor:COLOR_BTN_SELECTED forState:UIControlStateNormal];
+    [_talkBtn setTitleColor:COLOR_BTN_SELECTED forState:UIControlStateNormal];
     [_placeBtn setTitleColor:COLOR_BTN_NORMAL forState:UIControlStateNormal];
-    [_accountBtn setTitleColor:COLOR_BTN_NORMAL forState:UIControlStateNormal];
+    [_promotionBtn setTitleColor:COLOR_BTN_NORMAL forState:UIControlStateNormal];
     
     
     [UIView animateWithDuration:0.2 animations:^{
         _slideLineLeadingConstraint.constant = 0;
+        _talkLeadingConstraint.constant = 0;
+        [self.view layoutIfNeeded];
+    }];
+    
+}
+
+
+- (IBAction)placeAction:(id)sender {
+    _talkBtn.titleLabel.font = [UIFont systemFontOfSize:13.5];
+    _placeBtn.titleLabel.font = [UIFont boldSystemFontOfSize:14];
+    _promotionBtn.titleLabel.font = [UIFont systemFontOfSize:13.5];
+    
+    [_talkBtn setTitleColor:COLOR_BTN_NORMAL forState:UIControlStateNormal];
+    [_placeBtn setTitleColor:COLOR_BTN_SELECTED forState:UIControlStateNormal];
+    [_promotionBtn setTitleColor:COLOR_BTN_NORMAL forState:UIControlStateNormal];
+    
+    [UIView animateWithDuration:0.2 animations:^{
+        _slideLineLeadingConstraint.constant = frameW/3;
+        _talkLeadingConstraint.constant = - frameW;
         [self.view layoutIfNeeded];
     }];
 }
 
-- (IBAction)placeAction:(id)sender {
-    _grabTravelBtn.titleLabel.font = [UIFont systemFontOfSize:13.5];
-    _placeBtn.titleLabel.font = [UIFont boldSystemFontOfSize:14];
-    _accountBtn.titleLabel.font = [UIFont systemFontOfSize:13.5];
-    
-    [_grabTravelBtn setTitleColor:COLOR_BTN_NORMAL forState:UIControlStateNormal];
-    [_placeBtn setTitleColor:COLOR_BTN_SELECTED forState:UIControlStateNormal];
-    [_accountBtn setTitleColor:COLOR_BTN_NORMAL forState:UIControlStateNormal];
-    
-    [UIView animateWithDuration:0.2 animations:^{
-        _slideLineLeadingConstraint.constant = frameW/3;
-         [self.view layoutIfNeeded];
-    }];
-}
 
-- (IBAction)accountAction:(id)sender {
-    _grabTravelBtn.titleLabel.font = [UIFont systemFontOfSize:13.5];
+- (IBAction)promotionAction:(id)sender {
     _placeBtn.titleLabel.font = [UIFont systemFontOfSize:13.5];
-    _accountBtn.titleLabel.font = [UIFont boldSystemFontOfSize:14];
+    _promotionBtn.titleLabel.font = [UIFont boldSystemFontOfSize:14];
     
-    [_grabTravelBtn setTitleColor:COLOR_BTN_NORMAL forState:UIControlStateNormal];
+    [_talkBtn setTitleColor:COLOR_BTN_NORMAL forState:UIControlStateNormal];
     [_placeBtn setTitleColor:COLOR_BTN_NORMAL forState:UIControlStateNormal];
-    [_accountBtn setTitleColor:COLOR_BTN_SELECTED forState:UIControlStateNormal];
+    [_promotionBtn setTitleColor:COLOR_BTN_SELECTED forState:UIControlStateNormal];
     
     [UIView animateWithDuration:0.2 animations:^{
         _slideLineLeadingConstraint.constant = 2*frameW/3;
-         [self.view layoutIfNeeded];
+        _talkLeadingConstraint.constant = - 2*frameW;
+        [self.view layoutIfNeeded];
     }];
+    
 }
 
 

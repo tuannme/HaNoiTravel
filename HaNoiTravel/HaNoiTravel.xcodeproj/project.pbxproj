@@ -25,9 +25,7 @@
 		1A1F8A361E260A2900E2A0FA /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1F8A351E260A2900E2A0FA /* SignUpViewController.m */; };
 		1A1F8A391E260DA400E2A0FA /* SignUpSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1F8A381E260DA400E2A0FA /* SignUpSegue.m */; };
 		1A1F8A3C1E26300200E2A0FA /* ic_close.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A1F8A3B1E26300200E2A0FA /* ic_close.png */; };
-		1A2793B31E28D1DC00F15658 /* GrabTravelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2793B21E28D1DC00F15658 /* GrabTravelViewController.m */; };
 		1A2793B61E28D1EC00F15658 /* PlaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2793B51E28D1EC00F15658 /* PlaceViewController.m */; };
-		1A2793B91E28D23800F15658 /* FriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2793B81E28D23800F15658 /* FriendViewController.m */; };
 		1A3E0E921E2893080059C6F7 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A3E0E911E2893080059C6F7 /* RootViewController.m */; };
 		1A3E0E981E2893D40059C6F7 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A3E0E971E2893D40059C6F7 /* MenuViewController.m */; };
 		1A823F181E2C74DA009CDB52 /* MenuHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A823F171E2C74DA009CDB52 /* MenuHeader.xib */; };
@@ -35,6 +33,16 @@
 		1A823F1F1E2C7615009CDB52 /* MenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A823F1D1E2C7615009CDB52 /* MenuCell.m */; };
 		1A823F201E2C7615009CDB52 /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A823F1E1E2C7615009CDB52 /* MenuCell.xib */; };
 		1A823F231E2C7A67009CDB52 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A823F221E2C7A67009CDB52 /* User.m */; };
+		1AE44A191E306A0D00C9A1CF /* TalkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE44A181E306A0D00C9A1CF /* TalkViewController.m */; };
+		1AE44A1C1E306A1E00C9A1CF /* PromotionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE44A1B1E306A1E00C9A1CF /* PromotionViewController.m */; };
+		1AE44A1E1E307CCF00C9A1CF /* ic_voice.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AE44A1D1E307CCF00C9A1CF /* ic_voice.png */; };
+		1AE44A201E307DCA00C9A1CF /* ic_search.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AE44A1F1E307DCA00C9A1CF /* ic_search.png */; };
+		1AE44A241E307E5300C9A1CF /* PlaceMapCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE44A231E307E5300C9A1CF /* PlaceMapCell.m */; };
+		1AE44A271E307EA400C9A1CF /* MapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE44A261E307EA400C9A1CF /* MapView.m */; };
+		1AE44A481E30B63E00C9A1CF /* ic_search_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AE44A461E30B63E00C9A1CF /* ic_search_blue.png */; };
+		1AE44A491E30B63E00C9A1CF /* ic_voice_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AE44A471E30B63E00C9A1CF /* ic_voice_blue.png */; };
+		1AE44A4D1E30BDDC00C9A1CF /* PlaceDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE44A4C1E30BDDC00C9A1CF /* PlaceDetailViewController.m */; };
+		1AE44A4F1E30BEE600C9A1CF /* ic_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AE44A4E1E30BEE600C9A1CF /* ic_back.png */; };
 		7BE147CDA53F32D7A7C89222 /* libPods-HaNoiTravel.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C1AC77D4C49CB256DBE58AA /* libPods-HaNoiTravel.a */; };
 		CA3781F51E27C54900328C2D /* SlideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3781F31E27C54900328C2D /* SlideMenuViewController.m */; };
 		CA42D8D91E26615A00A1F574 /* ic_close_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = CA42D8D81E26615A00A1F574 /* ic_close_blue.png */; };
@@ -76,7 +84,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1635702E1D5B02B50093CDF5 /* HaNoiTravel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = HaNoiTravel.app; path = "/Users/dreamup/Desktop/IT'SMe/HaNoiTravel/HaNoiTravel/build/Debug-iphoneos/HaNoiTravel.app"; sourceTree = "<absolute>"; };
 		163570321D5B02B50093CDF5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		163570341D5B02B50093CDF5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		163570351D5B02B50093CDF5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -84,10 +91,8 @@
 		1635703D1D5B02B50093CDF5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		163570401D5B02B50093CDF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		163570421D5B02B50093CDF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = HaNoiTravel/Info.plist; sourceTree = "<group>"; };
-		163570471D5B02B50093CDF5 /* HaNoiTravelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = HaNoiTravelTests.xctest; path = "/Users/dreamup/Desktop/IT'SMe/HaNoiTravel/HaNoiTravel/build/Debug-iphoneos/HaNoiTravelTests.xctest"; sourceTree = "<absolute>"; };
 		1635704B1D5B02B50093CDF5 /* HaNoiTravelTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HaNoiTravelTests.m; sourceTree = "<group>"; };
 		1635704D1D5B02B50093CDF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		163570521D5B02B50093CDF5 /* HaNoiTravelUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = HaNoiTravelUITests.xctest; path = "/Users/dreamup/Desktop/IT'SMe/HaNoiTravel/HaNoiTravel/build/Debug-iphoneos/HaNoiTravelUITests.xctest"; sourceTree = "<absolute>"; };
 		163570561D5B02B50093CDF5 /* HaNoiTravelUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HaNoiTravelUITests.m; sourceTree = "<group>"; };
 		163570581D5B02B50093CDF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		163570641D5B0B090093CDF5 /* DirectionService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectionService.h; sourceTree = "<group>"; };
@@ -106,12 +111,8 @@
 		1A1F8A371E260DA400E2A0FA /* SignUpSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpSegue.h; sourceTree = "<group>"; };
 		1A1F8A381E260DA400E2A0FA /* SignUpSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpSegue.m; sourceTree = "<group>"; };
 		1A1F8A3B1E26300200E2A0FA /* ic_close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_close.png; sourceTree = "<group>"; };
-		1A2793B11E28D1DC00F15658 /* GrabTravelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrabTravelViewController.h; sourceTree = "<group>"; };
-		1A2793B21E28D1DC00F15658 /* GrabTravelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrabTravelViewController.m; sourceTree = "<group>"; };
 		1A2793B41E28D1EC00F15658 /* PlaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceViewController.h; sourceTree = "<group>"; };
 		1A2793B51E28D1EC00F15658 /* PlaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceViewController.m; sourceTree = "<group>"; };
-		1A2793B71E28D23800F15658 /* FriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendViewController.h; sourceTree = "<group>"; };
-		1A2793B81E28D23800F15658 /* FriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendViewController.m; sourceTree = "<group>"; };
 		1A3E0E901E2893080059C6F7 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		1A3E0E911E2893080059C6F7 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		1A3E0E961E2893D40059C6F7 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
@@ -124,6 +125,24 @@
 		1A823F1E1E2C7615009CDB52 /* MenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
 		1A823F211E2C7A67009CDB52 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		1A823F221E2C7A67009CDB52 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		1AE44A141E3055A100C9A1CF /* HaNoiTravel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HaNoiTravel.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AE44A151E3055A100C9A1CF /* HaNoiTravelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HaNoiTravelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AE44A161E3055A100C9A1CF /* HaNoiTravelUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HaNoiTravelUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AE44A171E306A0D00C9A1CF /* TalkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkViewController.h; sourceTree = "<group>"; };
+		1AE44A181E306A0D00C9A1CF /* TalkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkViewController.m; sourceTree = "<group>"; };
+		1AE44A1A1E306A1E00C9A1CF /* PromotionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PromotionViewController.h; sourceTree = "<group>"; };
+		1AE44A1B1E306A1E00C9A1CF /* PromotionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PromotionViewController.m; sourceTree = "<group>"; };
+		1AE44A1D1E307CCF00C9A1CF /* ic_voice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_voice.png; sourceTree = "<group>"; };
+		1AE44A1F1E307DCA00C9A1CF /* ic_search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_search.png; sourceTree = "<group>"; };
+		1AE44A221E307E5300C9A1CF /* PlaceMapCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceMapCell.h; sourceTree = "<group>"; };
+		1AE44A231E307E5300C9A1CF /* PlaceMapCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceMapCell.m; sourceTree = "<group>"; };
+		1AE44A251E307EA400C9A1CF /* MapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapView.h; sourceTree = "<group>"; };
+		1AE44A261E307EA400C9A1CF /* MapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapView.m; sourceTree = "<group>"; };
+		1AE44A461E30B63E00C9A1CF /* ic_search_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_search_blue.png; sourceTree = "<group>"; };
+		1AE44A471E30B63E00C9A1CF /* ic_voice_blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_voice_blue.png; sourceTree = "<group>"; };
+		1AE44A4B1E30BDDC00C9A1CF /* PlaceDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceDetailViewController.h; sourceTree = "<group>"; };
+		1AE44A4C1E30BDDC00C9A1CF /* PlaceDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceDetailViewController.m; sourceTree = "<group>"; };
+		1AE44A4E1E30BEE600C9A1CF /* ic_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_back.png; sourceTree = "<group>"; };
 		6C1AC77D4C49CB256DBE58AA /* libPods-HaNoiTravel.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HaNoiTravel.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F8408FA8DF0472614964C22 /* Pods-HaNoiTravel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HaNoiTravel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HaNoiTravel/Pods-HaNoiTravel.debug.xcconfig"; sourceTree = "<group>"; };
 		98E89EB3F93B6D26F79BB7D7 /* Pods-HaNoiTravel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HaNoiTravel.release.xcconfig"; path = "Pods/Target Support Files/Pods-HaNoiTravel/Pods-HaNoiTravel.release.xcconfig"; sourceTree = "<group>"; };
@@ -176,6 +195,9 @@
 				163570551D5B02B50093CDF5 /* HaNoiTravelUITests */,
 				BE855AA05BD081A626988666 /* Pods */,
 				337757E6D50635DCECACAA73 /* Frameworks */,
+				1AE44A141E3055A100C9A1CF /* HaNoiTravel.app */,
+				1AE44A151E3055A100C9A1CF /* HaNoiTravelTests.xctest */,
+				1AE44A161E3055A100C9A1CF /* HaNoiTravelUITests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -192,8 +214,6 @@
 				1635703D1D5B02B50093CDF5 /* Assets.xcassets */,
 				1635703F1D5B02B50093CDF5 /* LaunchScreen.storyboard */,
 				163570311D5B02B50093CDF5 /* Supporting Files */,
-				163570671D5C24AD0093CDF5 /* MainViewController.h */,
-				163570681D5C24AD0093CDF5 /* MainViewController.m */,
 			);
 			path = HaNoiTravel;
 			sourceTree = "<group>";
@@ -239,6 +259,8 @@
 				1A2793B01E28D1BA00F15658 /* TabContent */,
 				1A2793AF1E28D1A300F15658 /* Login */,
 				CA3781F71E27C54E00328C2D /* SlideMenu */,
+				163570671D5C24AD0093CDF5 /* MainViewController.h */,
+				163570681D5C24AD0093CDF5 /* MainViewController.m */,
 				1A3E0E901E2893080059C6F7 /* RootViewController.h */,
 				1A3E0E911E2893080059C6F7 /* RootViewController.m */,
 			);
@@ -265,6 +287,7 @@
 		1A1F8A241E24C25900E2A0FA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1AE44A211E307E2F00C9A1CF /* PlaceView */,
 				1A823F161E2C749A009CDB52 /* MenuSubView */,
 				1A1F8A371E260DA400E2A0FA /* SignUpSegue.h */,
 				1A1F8A381E260DA400E2A0FA /* SignUpSegue.m */,
@@ -297,6 +320,11 @@
 		1A1F8A3A1E26300200E2A0FA /* Icon */ = {
 			isa = PBXGroup;
 			children = (
+				1AE44A4E1E30BEE600C9A1CF /* ic_back.png */,
+				1AE44A461E30B63E00C9A1CF /* ic_search_blue.png */,
+				1AE44A471E30B63E00C9A1CF /* ic_voice_blue.png */,
+				1AE44A1F1E307DCA00C9A1CF /* ic_search.png */,
+				1AE44A1D1E307CCF00C9A1CF /* ic_voice.png */,
 				CA42D8D81E26615A00A1F574 /* ic_close_blue.png */,
 				1A1F8A3B1E26300200E2A0FA /* ic_close.png */,
 			);
@@ -318,12 +346,11 @@
 		1A2793B01E28D1BA00F15658 /* TabContent */ = {
 			isa = PBXGroup;
 			children = (
-				1A2793B11E28D1DC00F15658 /* GrabTravelViewController.h */,
-				1A2793B21E28D1DC00F15658 /* GrabTravelViewController.m */,
-				1A2793B41E28D1EC00F15658 /* PlaceViewController.h */,
-				1A2793B51E28D1EC00F15658 /* PlaceViewController.m */,
-				1A2793B71E28D23800F15658 /* FriendViewController.h */,
-				1A2793B81E28D23800F15658 /* FriendViewController.m */,
+				1AE44A4A1E30BDBD00C9A1CF /* PlaceVC */,
+				1AE44A171E306A0D00C9A1CF /* TalkViewController.h */,
+				1AE44A181E306A0D00C9A1CF /* TalkViewController.m */,
+				1AE44A1A1E306A1E00C9A1CF /* PromotionViewController.h */,
+				1AE44A1B1E306A1E00C9A1CF /* PromotionViewController.m */,
 			);
 			name = TabContent;
 			sourceTree = "<group>";
@@ -356,6 +383,28 @@
 				1A823F1E1E2C7615009CDB52 /* MenuCell.xib */,
 			);
 			name = MenuSubView;
+			sourceTree = "<group>";
+		};
+		1AE44A211E307E2F00C9A1CF /* PlaceView */ = {
+			isa = PBXGroup;
+			children = (
+				1AE44A221E307E5300C9A1CF /* PlaceMapCell.h */,
+				1AE44A231E307E5300C9A1CF /* PlaceMapCell.m */,
+				1AE44A251E307EA400C9A1CF /* MapView.h */,
+				1AE44A261E307EA400C9A1CF /* MapView.m */,
+			);
+			name = PlaceView;
+			sourceTree = "<group>";
+		};
+		1AE44A4A1E30BDBD00C9A1CF /* PlaceVC */ = {
+			isa = PBXGroup;
+			children = (
+				1A2793B41E28D1EC00F15658 /* PlaceViewController.h */,
+				1A2793B51E28D1EC00F15658 /* PlaceViewController.m */,
+				1AE44A4B1E30BDDC00C9A1CF /* PlaceDetailViewController.h */,
+				1AE44A4C1E30BDDC00C9A1CF /* PlaceDetailViewController.m */,
+			);
+			name = PlaceVC;
 			sourceTree = "<group>";
 		};
 		337757E6D50635DCECACAA73 /* Frameworks */ = {
@@ -415,7 +464,7 @@
 			);
 			name = HaNoiTravel;
 			productName = HaNoiTravel;
-			productReference = 1635702E1D5B02B50093CDF5 /* HaNoiTravel.app */;
+			productReference = 1AE44A141E3055A100C9A1CF /* HaNoiTravel.app */;
 			productType = "com.apple.product-type.application";
 		};
 		163570461D5B02B50093CDF5 /* HaNoiTravelTests */ = {
@@ -433,7 +482,7 @@
 			);
 			name = HaNoiTravelTests;
 			productName = HaNoiTravelTests;
-			productReference = 163570471D5B02B50093CDF5 /* HaNoiTravelTests.xctest */;
+			productReference = 1AE44A151E3055A100C9A1CF /* HaNoiTravelTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		163570511D5B02B50093CDF5 /* HaNoiTravelUITests */ = {
@@ -451,7 +500,7 @@
 			);
 			name = HaNoiTravelUITests;
 			productName = HaNoiTravelUITests;
-			productReference = 163570521D5B02B50093CDF5 /* HaNoiTravelUITests.xctest */;
+			productReference = 1AE44A161E3055A100C9A1CF /* HaNoiTravelUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -502,7 +551,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AE44A491E30B63E00C9A1CF /* ic_voice_blue.png in Resources */,
 				CA42D8E81E268C0500A1F574 /* spinner_blue.png in Resources */,
+				1AE44A481E30B63E00C9A1CF /* ic_search_blue.png in Resources */,
+				1AE44A201E307DCA00C9A1CF /* ic_search.png in Resources */,
+				1AE44A4F1E30BEE600C9A1CF /* ic_back.png in Resources */,
 				1A1F8A331E25D22100E2A0FA /* ic_google.png in Resources */,
 				1A823F201E2C7615009CDB52 /* MenuCell.xib in Resources */,
 				163570411D5B02B50093CDF5 /* LaunchScreen.storyboard in Resources */,
@@ -512,6 +565,7 @@
 				1A1F8A2F1E24CA4200E2A0FA /* bg_field_down.png in Resources */,
 				1A823F181E2C74DA009CDB52 /* MenuHeader.xib in Resources */,
 				CA42D8D91E26615A00A1F574 /* ic_close_blue.png in Resources */,
+				1AE44A1E1E307CCF00C9A1CF /* ic_voice.png in Resources */,
 				1A1F8A3C1E26300200E2A0FA /* ic_close.png in Resources */,
 				1635703C1D5B02B50093CDF5 /* Main.storyboard in Resources */,
 				1A1F8A2D1E24C7E800E2A0FA /* bg_field_up.png in Resources */,
@@ -590,16 +644,19 @@
 			files = (
 				CA42D8DF1E266CE800A1F574 /* Utils.m in Sources */,
 				1A1F8A391E260DA400E2A0FA /* SignUpSegue.m in Sources */,
+				1AE44A191E306A0D00C9A1CF /* TalkViewController.m in Sources */,
 				1A3E0E921E2893080059C6F7 /* RootViewController.m in Sources */,
+				1AE44A271E307EA400C9A1CF /* MapView.m in Sources */,
 				163570361D5B02B50093CDF5 /* AppDelegate.m in Sources */,
-				1A2793B31E28D1DC00F15658 /* GrabTravelViewController.m in Sources */,
 				1A3E0E981E2893D40059C6F7 /* MenuViewController.m in Sources */,
+				1AE44A1C1E306A1E00C9A1CF /* PromotionViewController.m in Sources */,
 				163570331D5B02B50093CDF5 /* main.m in Sources */,
 				1A823F1B1E2C74ED009CDB52 /* MenuHeader.m in Sources */,
 				1A1F8A361E260A2900E2A0FA /* SignUpViewController.m in Sources */,
-				1A2793B91E28D23800F15658 /* FriendViewController.m in Sources */,
 				163570691D5C24AD0093CDF5 /* MainViewController.m in Sources */,
 				163570661D5B0B090093CDF5 /* DirectionService.m in Sources */,
+				1AE44A4D1E30BDDC00C9A1CF /* PlaceDetailViewController.m in Sources */,
+				1AE44A241E307E5300C9A1CF /* PlaceMapCell.m in Sources */,
 				1A1F8A271E24C28B00E2A0FA /* LoginViewController.m in Sources */,
 				CA42D8E21E267E7600A1F574 /* SpinnerView.m in Sources */,
 				1A823F1F1E2C7615009CDB52 /* MenuCell.m in Sources */,

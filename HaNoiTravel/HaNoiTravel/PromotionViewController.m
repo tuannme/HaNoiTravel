@@ -1,18 +1,18 @@
 //
-//  GrabTravelViewController.m
+//  PromotionViewController.m
 //  HaNoiTravel
 //
-//  Created by Dreamup on 1/13/17.
+//  Created by Dreamup on 1/19/17.
 //  Copyright © 2017 DREAMUP. All rights reserved.
 //
 
-#import "GrabTravelViewController.h"
+#import "PromotionViewController.h"
 
-@interface GrabTravelViewController ()
+@interface PromotionViewController ()
 
 @end
 
-@implementation GrabTravelViewController
+@implementation PromotionViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
