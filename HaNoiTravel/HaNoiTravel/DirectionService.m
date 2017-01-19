@@ -51,6 +51,8 @@ static NSString *kMDDirectionsURL = @"http://maps.googleapis.com/maps/api/direct
   dispatch_async(dispatch_get_main_queue(), ^{
     NSData* data = [NSData dataWithContentsOfURL:_directionsURL];
     [self fetchedData:data withSelector:selector withDelegate:delegate];
+      
+      
   });
 }
 

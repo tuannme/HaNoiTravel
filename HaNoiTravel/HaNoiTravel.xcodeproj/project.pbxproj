@@ -25,6 +25,16 @@
 		1A1F8A361E260A2900E2A0FA /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1F8A351E260A2900E2A0FA /* SignUpViewController.m */; };
 		1A1F8A391E260DA400E2A0FA /* SignUpSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1F8A381E260DA400E2A0FA /* SignUpSegue.m */; };
 		1A1F8A3C1E26300200E2A0FA /* ic_close.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A1F8A3B1E26300200E2A0FA /* ic_close.png */; };
+		1A2793B31E28D1DC00F15658 /* GrabTravelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2793B21E28D1DC00F15658 /* GrabTravelViewController.m */; };
+		1A2793B61E28D1EC00F15658 /* PlaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2793B51E28D1EC00F15658 /* PlaceViewController.m */; };
+		1A2793B91E28D23800F15658 /* FriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A2793B81E28D23800F15658 /* FriendViewController.m */; };
+		1A3E0E921E2893080059C6F7 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A3E0E911E2893080059C6F7 /* RootViewController.m */; };
+		1A3E0E981E2893D40059C6F7 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A3E0E971E2893D40059C6F7 /* MenuViewController.m */; };
+		1A823F181E2C74DA009CDB52 /* MenuHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A823F171E2C74DA009CDB52 /* MenuHeader.xib */; };
+		1A823F1B1E2C74ED009CDB52 /* MenuHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A823F1A1E2C74ED009CDB52 /* MenuHeader.m */; };
+		1A823F1F1E2C7615009CDB52 /* MenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A823F1D1E2C7615009CDB52 /* MenuCell.m */; };
+		1A823F201E2C7615009CDB52 /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A823F1E1E2C7615009CDB52 /* MenuCell.xib */; };
+		1A823F231E2C7A67009CDB52 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A823F221E2C7A67009CDB52 /* User.m */; };
 		7BE147CDA53F32D7A7C89222 /* libPods-HaNoiTravel.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C1AC77D4C49CB256DBE58AA /* libPods-HaNoiTravel.a */; };
 		CA3781F51E27C54900328C2D /* SlideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA3781F31E27C54900328C2D /* SlideMenuViewController.m */; };
 		CA42D8D91E26615A00A1F574 /* ic_close_blue.png in Resources */ = {isa = PBXBuildFile; fileRef = CA42D8D81E26615A00A1F574 /* ic_close_blue.png */; };
@@ -52,8 +62,21 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		1A2793CA1E28D5AB00F15658 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		1635702E1D5B02B50093CDF5 /* HaNoiTravel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HaNoiTravel.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1635702E1D5B02B50093CDF5 /* HaNoiTravel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = HaNoiTravel.app; path = "/Users/dreamup/Desktop/IT'SMe/HaNoiTravel/HaNoiTravel/build/Debug-iphoneos/HaNoiTravel.app"; sourceTree = "<absolute>"; };
 		163570321D5B02B50093CDF5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		163570341D5B02B50093CDF5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		163570351D5B02B50093CDF5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -61,10 +84,10 @@
 		1635703D1D5B02B50093CDF5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		163570401D5B02B50093CDF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		163570421D5B02B50093CDF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = HaNoiTravel/Info.plist; sourceTree = "<group>"; };
-		163570471D5B02B50093CDF5 /* HaNoiTravelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HaNoiTravelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		163570471D5B02B50093CDF5 /* HaNoiTravelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = HaNoiTravelTests.xctest; path = "/Users/dreamup/Desktop/IT'SMe/HaNoiTravel/HaNoiTravel/build/Debug-iphoneos/HaNoiTravelTests.xctest"; sourceTree = "<absolute>"; };
 		1635704B1D5B02B50093CDF5 /* HaNoiTravelTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HaNoiTravelTests.m; sourceTree = "<group>"; };
 		1635704D1D5B02B50093CDF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		163570521D5B02B50093CDF5 /* HaNoiTravelUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HaNoiTravelUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		163570521D5B02B50093CDF5 /* HaNoiTravelUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = HaNoiTravelUITests.xctest; path = "/Users/dreamup/Desktop/IT'SMe/HaNoiTravel/HaNoiTravel/build/Debug-iphoneos/HaNoiTravelUITests.xctest"; sourceTree = "<absolute>"; };
 		163570561D5B02B50093CDF5 /* HaNoiTravelUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HaNoiTravelUITests.m; sourceTree = "<group>"; };
 		163570581D5B02B50093CDF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		163570641D5B0B090093CDF5 /* DirectionService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectionService.h; sourceTree = "<group>"; };
@@ -83,6 +106,24 @@
 		1A1F8A371E260DA400E2A0FA /* SignUpSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpSegue.h; sourceTree = "<group>"; };
 		1A1F8A381E260DA400E2A0FA /* SignUpSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpSegue.m; sourceTree = "<group>"; };
 		1A1F8A3B1E26300200E2A0FA /* ic_close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_close.png; sourceTree = "<group>"; };
+		1A2793B11E28D1DC00F15658 /* GrabTravelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrabTravelViewController.h; sourceTree = "<group>"; };
+		1A2793B21E28D1DC00F15658 /* GrabTravelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrabTravelViewController.m; sourceTree = "<group>"; };
+		1A2793B41E28D1EC00F15658 /* PlaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceViewController.h; sourceTree = "<group>"; };
+		1A2793B51E28D1EC00F15658 /* PlaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceViewController.m; sourceTree = "<group>"; };
+		1A2793B71E28D23800F15658 /* FriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendViewController.h; sourceTree = "<group>"; };
+		1A2793B81E28D23800F15658 /* FriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendViewController.m; sourceTree = "<group>"; };
+		1A3E0E901E2893080059C6F7 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		1A3E0E911E2893080059C6F7 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		1A3E0E961E2893D40059C6F7 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		1A3E0E971E2893D40059C6F7 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		1A823F171E2C74DA009CDB52 /* MenuHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuHeader.xib; sourceTree = "<group>"; };
+		1A823F191E2C74ED009CDB52 /* MenuHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuHeader.h; sourceTree = "<group>"; };
+		1A823F1A1E2C74ED009CDB52 /* MenuHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuHeader.m; sourceTree = "<group>"; };
+		1A823F1C1E2C7615009CDB52 /* MenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuCell.h; sourceTree = "<group>"; };
+		1A823F1D1E2C7615009CDB52 /* MenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuCell.m; sourceTree = "<group>"; };
+		1A823F1E1E2C7615009CDB52 /* MenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
+		1A823F211E2C7A67009CDB52 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		1A823F221E2C7A67009CDB52 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		6C1AC77D4C49CB256DBE58AA /* libPods-HaNoiTravel.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HaNoiTravel.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F8408FA8DF0472614964C22 /* Pods-HaNoiTravel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HaNoiTravel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HaNoiTravel/Pods-HaNoiTravel.debug.xcconfig"; sourceTree = "<group>"; };
 		98E89EB3F93B6D26F79BB7D7 /* Pods-HaNoiTravel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HaNoiTravel.release.xcconfig"; path = "Pods/Target Support Files/Pods-HaNoiTravel/Pods-HaNoiTravel.release.xcconfig"; sourceTree = "<group>"; };
@@ -133,25 +174,15 @@
 				163570301D5B02B50093CDF5 /* HaNoiTravel */,
 				1635704A1D5B02B50093CDF5 /* HaNoiTravelTests */,
 				163570551D5B02B50093CDF5 /* HaNoiTravelUITests */,
-				1635702F1D5B02B50093CDF5 /* Products */,
 				BE855AA05BD081A626988666 /* Pods */,
 				337757E6D50635DCECACAA73 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		1635702F1D5B02B50093CDF5 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				1635702E1D5B02B50093CDF5 /* HaNoiTravel.app */,
-				163570471D5B02B50093CDF5 /* HaNoiTravelTests.xctest */,
-				163570521D5B02B50093CDF5 /* HaNoiTravelUITests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		163570301D5B02B50093CDF5 /* HaNoiTravel */ = {
 			isa = PBXGroup;
 			children = (
+				1A3E0E941E2893930059C6F7 /* Lib */,
 				1A1F8A241E24C25900E2A0FA /* View */,
 				1A1F8A231E24C24F00E2A0FA /* Model */,
 				1A1F8A221E24C24300E2A0FA /* Controller */,
@@ -161,8 +192,6 @@
 				1635703D1D5B02B50093CDF5 /* Assets.xcassets */,
 				1635703F1D5B02B50093CDF5 /* LaunchScreen.storyboard */,
 				163570311D5B02B50093CDF5 /* Supporting Files */,
-				163570641D5B0B090093CDF5 /* DirectionService.h */,
-				163570651D5B0B090093CDF5 /* DirectionService.m */,
 				163570671D5C24AD0093CDF5 /* MainViewController.h */,
 				163570681D5C24AD0093CDF5 /* MainViewController.m */,
 			);
@@ -207,11 +236,11 @@
 		1A1F8A221E24C24300E2A0FA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				1A2793B01E28D1BA00F15658 /* TabContent */,
+				1A2793AF1E28D1A300F15658 /* Login */,
 				CA3781F71E27C54E00328C2D /* SlideMenu */,
-				1A1F8A251E24C28B00E2A0FA /* LoginViewController.h */,
-				1A1F8A261E24C28B00E2A0FA /* LoginViewController.m */,
-				1A1F8A341E260A2900E2A0FA /* SignUpViewController.h */,
-				1A1F8A351E260A2900E2A0FA /* SignUpViewController.m */,
+				1A3E0E901E2893080059C6F7 /* RootViewController.h */,
+				1A3E0E911E2893080059C6F7 /* RootViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -219,12 +248,16 @@
 		1A1F8A231E24C24F00E2A0FA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				163570641D5B0B090093CDF5 /* DirectionService.h */,
+				163570651D5B0B090093CDF5 /* DirectionService.m */,
 				CA42D8DA1E266C7800A1F574 /* NSString+Utils.h */,
 				CA42D8DB1E266C7800A1F574 /* NSString+Utils.m */,
 				CA42D8DD1E266CE800A1F574 /* Utils.h */,
 				CA42D8DE1E266CE800A1F574 /* Utils.m */,
 				CA42D8E01E267E7600A1F574 /* SpinnerView.h */,
 				CA42D8E11E267E7600A1F574 /* SpinnerView.m */,
+				1A823F211E2C7A67009CDB52 /* User.h */,
+				1A823F221E2C7A67009CDB52 /* User.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -232,6 +265,7 @@
 		1A1F8A241E24C25900E2A0FA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1A823F161E2C749A009CDB52 /* MenuSubView */,
 				1A1F8A371E260DA400E2A0FA /* SignUpSegue.h */,
 				1A1F8A381E260DA400E2A0FA /* SignUpSegue.m */,
 			);
@@ -270,6 +304,60 @@
 			path = Resource/Icon;
 			sourceTree = "<group>";
 		};
+		1A2793AF1E28D1A300F15658 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				1A1F8A251E24C28B00E2A0FA /* LoginViewController.h */,
+				1A1F8A261E24C28B00E2A0FA /* LoginViewController.m */,
+				1A1F8A341E260A2900E2A0FA /* SignUpViewController.h */,
+				1A1F8A351E260A2900E2A0FA /* SignUpViewController.m */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		1A2793B01E28D1BA00F15658 /* TabContent */ = {
+			isa = PBXGroup;
+			children = (
+				1A2793B11E28D1DC00F15658 /* GrabTravelViewController.h */,
+				1A2793B21E28D1DC00F15658 /* GrabTravelViewController.m */,
+				1A2793B41E28D1EC00F15658 /* PlaceViewController.h */,
+				1A2793B51E28D1EC00F15658 /* PlaceViewController.m */,
+				1A2793B71E28D23800F15658 /* FriendViewController.h */,
+				1A2793B81E28D23800F15658 /* FriendViewController.m */,
+			);
+			name = TabContent;
+			sourceTree = "<group>";
+		};
+		1A3E0E941E2893930059C6F7 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				1A3E0E951E28939F0059C6F7 /* MenuController */,
+			);
+			name = Lib;
+			sourceTree = "<group>";
+		};
+		1A3E0E951E28939F0059C6F7 /* MenuController */ = {
+			isa = PBXGroup;
+			children = (
+				CA3781F21E27C54900328C2D /* SlideMenuViewController.h */,
+				CA3781F31E27C54900328C2D /* SlideMenuViewController.m */,
+			);
+			name = MenuController;
+			sourceTree = "<group>";
+		};
+		1A823F161E2C749A009CDB52 /* MenuSubView */ = {
+			isa = PBXGroup;
+			children = (
+				1A823F171E2C74DA009CDB52 /* MenuHeader.xib */,
+				1A823F191E2C74ED009CDB52 /* MenuHeader.h */,
+				1A823F1A1E2C74ED009CDB52 /* MenuHeader.m */,
+				1A823F1C1E2C7615009CDB52 /* MenuCell.h */,
+				1A823F1D1E2C7615009CDB52 /* MenuCell.m */,
+				1A823F1E1E2C7615009CDB52 /* MenuCell.xib */,
+			);
+			name = MenuSubView;
+			sourceTree = "<group>";
+		};
 		337757E6D50635DCECACAA73 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -290,8 +378,8 @@
 		CA3781F71E27C54E00328C2D /* SlideMenu */ = {
 			isa = PBXGroup;
 			children = (
-				CA3781F21E27C54900328C2D /* SlideMenuViewController.h */,
-				CA3781F31E27C54900328C2D /* SlideMenuViewController.m */,
+				1A3E0E961E2893D40059C6F7 /* MenuViewController.h */,
+				1A3E0E971E2893D40059C6F7 /* MenuViewController.m */,
 			);
 			name = SlideMenu;
 			sourceTree = "<group>";
@@ -319,6 +407,7 @@
 				1635702C1D5B02B50093CDF5 /* Resources */,
 				2E02D420E81A70A1867D43A6 /* [CP] Embed Pods Frameworks */,
 				479504A83F21F9205C6AC204 /* [CP] Copy Pods Resources */,
+				1A2793CA1E28D5AB00F15658 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
@@ -376,7 +465,7 @@
 				TargetAttributes = {
 					1635702D1D5B02B50093CDF5 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = N33STSQU9K;
+						DevelopmentTeam = 9ZZR5T4Q5D;
 					};
 					163570461D5B02B50093CDF5 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -397,7 +486,7 @@
 				Base,
 			);
 			mainGroup = 163570251D5B02B40093CDF5;
-			productRefGroup = 1635702F1D5B02B50093CDF5 /* Products */;
+			productRefGroup = 163570251D5B02B40093CDF5;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -415,11 +504,13 @@
 			files = (
 				CA42D8E81E268C0500A1F574 /* spinner_blue.png in Resources */,
 				1A1F8A331E25D22100E2A0FA /* ic_google.png in Resources */,
+				1A823F201E2C7615009CDB52 /* MenuCell.xib in Resources */,
 				163570411D5B02B50093CDF5 /* LaunchScreen.storyboard in Resources */,
 				1A1F8A211E249E7300E2A0FA /* GoogleService-Info.plist in Resources */,
 				1A1F8A321E25D22100E2A0FA /* ic_facebook.png in Resources */,
 				1635703E1D5B02B50093CDF5 /* Assets.xcassets in Resources */,
 				1A1F8A2F1E24CA4200E2A0FA /* bg_field_down.png in Resources */,
+				1A823F181E2C74DA009CDB52 /* MenuHeader.xib in Resources */,
 				CA42D8D91E26615A00A1F574 /* ic_close_blue.png in Resources */,
 				1A1F8A3C1E26300200E2A0FA /* ic_close.png in Resources */,
 				1635703C1D5B02B50093CDF5 /* Main.storyboard in Resources */,
@@ -499,13 +590,21 @@
 			files = (
 				CA42D8DF1E266CE800A1F574 /* Utils.m in Sources */,
 				1A1F8A391E260DA400E2A0FA /* SignUpSegue.m in Sources */,
+				1A3E0E921E2893080059C6F7 /* RootViewController.m in Sources */,
 				163570361D5B02B50093CDF5 /* AppDelegate.m in Sources */,
+				1A2793B31E28D1DC00F15658 /* GrabTravelViewController.m in Sources */,
+				1A3E0E981E2893D40059C6F7 /* MenuViewController.m in Sources */,
 				163570331D5B02B50093CDF5 /* main.m in Sources */,
+				1A823F1B1E2C74ED009CDB52 /* MenuHeader.m in Sources */,
 				1A1F8A361E260A2900E2A0FA /* SignUpViewController.m in Sources */,
+				1A2793B91E28D23800F15658 /* FriendViewController.m in Sources */,
 				163570691D5C24AD0093CDF5 /* MainViewController.m in Sources */,
 				163570661D5B0B090093CDF5 /* DirectionService.m in Sources */,
 				1A1F8A271E24C28B00E2A0FA /* LoginViewController.m in Sources */,
 				CA42D8E21E267E7600A1F574 /* SpinnerView.m in Sources */,
+				1A823F1F1E2C7615009CDB52 /* MenuCell.m in Sources */,
+				1A823F231E2C7A67009CDB52 /* User.m in Sources */,
+				1A2793B61E28D1EC00F15658 /* PlaceViewController.m in Sources */,
 				CA42D8DC1E266C7800A1F574 /* NSString+Utils.m in Sources */,
 				CA3781F51E27C54900328C2D /* SlideMenuViewController.m in Sources */,
 			);
@@ -655,7 +754,7 @@
 			baseConfigurationReference = 8F8408FA8DF0472614964C22 /* Pods-HaNoiTravel.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = N33STSQU9K;
+				DEVELOPMENT_TEAM = 9ZZR5T4Q5D;
 				INFOPLIST_FILE = HaNoiTravel/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dreamup.HaNoiTravel;
@@ -668,7 +767,7 @@
 			baseConfigurationReference = 98E89EB3F93B6D26F79BB7D7 /* Pods-HaNoiTravel.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = N33STSQU9K;
+				DEVELOPMENT_TEAM = 9ZZR5T4Q5D;
 				INFOPLIST_FILE = HaNoiTravel/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dreamup.HaNoiTravel;

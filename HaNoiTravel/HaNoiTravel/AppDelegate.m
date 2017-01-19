@@ -10,6 +10,7 @@
 #import <GoogleMaps/GoogleMaps.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import "SlideMenuViewController.h"
+#import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 @import Firebase;
 @import GoogleSignIn;
@@ -35,6 +36,9 @@
         NSLog(@"Error signing out: %@", signOutError);
     }
 
+    FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
+    [login logOut];
+    
     
     return YES;
 }

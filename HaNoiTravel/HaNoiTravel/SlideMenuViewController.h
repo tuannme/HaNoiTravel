@@ -13,6 +13,8 @@
 @property (strong,nonatomic) UIViewController *leftViewController;
 @property (strong,nonatomic) UINavigationController *mainNavi;
 
-- (void) swipeLeft;
+- (void) setLeftViewController:(UIViewController *)leftViewController;
+- (void) setMainNavi:(UINavigationController *)mainNavi;
+- (void) setSwipeEnable:(BOOL)enable;
 
 @end

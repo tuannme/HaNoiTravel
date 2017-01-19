@@ -8,74 +8,141 @@
 
 #import "SlideMenuViewController.h"
 
-@interface SlideMenuViewController ()
+static CGFloat threshold = 250;
+
+typedef enum {
+    LEFT,
+    RIGHT
+}Direction;
+
+
+@interface SlideMenuViewController (){
+    CGFloat beginPosition;
+    Direction direction;
+    CGPoint beginPoint;
+    BOOL swipeEnable;
+}
 
 @end
 
 @implementation SlideMenuViewController{
+    CGFloat screeW;
+    CGPoint lastPoint;
+}
+
+- (void) setLeftViewController:(UIViewController *)leftViewController{
+    _leftViewController = leftViewController;
+    [self.view addSubview:_leftViewController.view];
+    [self addChildViewController:_leftViewController];
     
+    CGRect frame = _leftViewController.view.frame;
+    frame.origin.x = - 100;
+    _leftViewController.view.frame = frame;
+    
+}
+- (void) setMainNavi:(UINavigationController *)mainNavi{
+    _mainNavi = mainNavi;
+    [self.view addSubview:_mainNavi.view];
+    [self addChildViewController:_mainNavi];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UISwipeGestureRecognizer *swipeL = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeGesture:)];
+    screeW = [[UIScreen mainScreen] bounds].size.width;
     self.view.userInteractionEnabled = YES;
-    swipeL.direction = UISwipeGestureRecognizerDirectionLeft;
-    [self.view addGestureRecognizer:swipeL];
-    
-    
-    UISwipeGestureRecognizer *swipeR = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeGesture:)];
-    swipeR.direction = UISwipeGestureRecognizerDirectionRight;
-    self.view.userInteractionEnabled = YES;
-    [self.view addGestureRecognizer:swipeR];
-    
-
-    
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    _mainNavi = [sb instantiateViewControllerWithIdentifier:@"LoginNavi"];
-    
-    [self.view addSubview:_mainNavi.view];
-    [self addChildViewController:_mainNavi];
-    
-    _leftViewController = [[UIViewController alloc] init];
-    _leftViewController.view.backgroundColor = [UIColor redColor];
-    [self.view addSubview:_leftViewController.view];
-    [self addChildViewController:_leftViewController];
-    [self swipeLeft];
 }
-
--(void)swipeGesture:(UISwipeGestureRecognizer*)swipe{
-    
-    if(swipe.direction == UISwipeGestureRecognizerDirectionLeft){
-        [self swipeLeft];
-    }else if (swipe.direction == UISwipeGestureRecognizerDirectionRight){
-        [self swipeRight];
-    }
-    
-}
-
 
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    NSLog(@"didReceiveMemoryWarning SlideMenu");
 }
 
-- (void) swipeLeft{
-    CGRect screen = [[UIScreen mainScreen] bounds];
-    screen.origin.x = - screen.size.width;
+- (void) setSwipeEnable:(BOOL)enable{
+    swipeEnable = enable;
+}
 
-    [UIView animateKeyframesWithDuration:0.3 delay:0 options:UIViewKeyframeAnimationOptionBeginFromCurrentState animations:^{
-        _leftViewController.view.frame = screen;
-    }completion:nil];
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [self.view endEditing:YES];
+    
+    UITouch *touch = [touches anyObject];
+    beginPoint = [touch locationInView:self.view];
+    lastPoint = beginPoint;
+    beginPosition = _mainNavi.view.frame.origin.x;
     
 }
 
-- (void) swipeRight{
-    CGRect screen = [[UIScreen mainScreen] bounds];
-    screen.origin.x = - 100;
-    _leftViewController.view.frame = screen;
+- (void) touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    
+    if(!swipeEnable){
+        return;
+    }
+    
+    UITouch *touch = [touches anyObject];
+    CGPoint nowPoint = [touch locationInView:self.view];
+    
+    if(nowPoint.x - lastPoint.x < 0){
+        direction = LEFT;
+    }else direction = RIGHT;
+    lastPoint = nowPoint;
+    
+    CGFloat postion = nowPoint.x - beginPoint.x;
+    
+    
+    if(beginPosition == 0){
+        if(postion < 0 || postion > threshold){
+            return;
+        }
+    }
+    
+    if(beginPosition == threshold){
+        if(beginPoint.x < threshold){
+            return;
+        }
+        postion = threshold + postion;
+    }
+    
+    CGRect mainF = _mainNavi.view.frame;
+    mainF.origin.x = postion;
+    _mainNavi.view.frame = mainF;
+    
+    CGRect leftF = _leftViewController.view.frame;
+    leftF.origin.x = (postion -100)/10;
+    _leftViewController.view.frame = leftF;
+    
 }
+
+- (void) touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    
+    if(!swipeEnable){
+        return;
+    }
+    
+    if(_mainNavi.view.frame.origin.x != 0 || _mainNavi.view.frame.origin.x != threshold){
+        CGRect endFrame = _mainNavi.view.frame;
+        CGRect leftFrame = _leftViewController.view.frame;
+        
+        if(direction == RIGHT){
+            endFrame.origin.x = threshold;
+            leftFrame.origin.x = (threshold-100)/10;
+        }else{
+            endFrame.origin.x = 0;
+            leftFrame.origin.x = -100;
+        }
+        
+        [UIView animateWithDuration:0.3f delay:0 usingSpringWithDamping:0.3f
+              initialSpringVelocity:0.4f
+                            options:UIViewAnimationOptionCurveEaseOut
+                         animations:^{
+                             _mainNavi.view.frame = endFrame;
+                             _leftViewController.view.frame = leftFrame;
+                         }completion:^(BOOL finished){
+                             
+                         }];
+    }
+}
+
+
 
 @end

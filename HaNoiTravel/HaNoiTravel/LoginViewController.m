@@ -14,6 +14,7 @@
 #import "SignUpSegue.h"
 #import "SpinnerView.h"
 #import "Utils.h"
+#import "User.h"
 #import "NSString+Utils.h"
 
 @import GoogleSignIn;
@@ -30,6 +31,7 @@
 
 - (IBAction)loginAction:(id)sender;
 - (IBAction)loginGoogleAction:(id)sender;
+- (IBAction)loginFaceBookAction:(id)sender;
 
 @end
 
@@ -65,15 +67,60 @@
     [_forgotPwLb addGestureRecognizer:tapGesture];
     _forgotPwLb.userInteractionEnabled = YES;
     
+    CAGradientLayer *layer = [self blueGradient];
+    layer.frame = [[UIScreen mainScreen] bounds];
+    [self.view.layer insertSublayer:layer atIndex:0];
+    
+    
 }
+- (CAGradientLayer*) blueGradient {
+    
+    UIColor *colorOne = [UIColor colorWithRed:(120/255.0) green:(135/255.0) blue:(150/255.0) alpha:1.0];
+    UIColor *colorTwo = [UIColor colorWithRed:(57/255.0)  green:(79/255.0)  blue:(96/255.0)  alpha:1.0];
+    
+    NSArray *colors = [NSArray arrayWithObjects:(id)colorOne.CGColor, colorTwo.CGColor, nil];
+    NSNumber *stopOne = [NSNumber numberWithFloat:0.0];
+    NSNumber *stopTwo = [NSNumber numberWithFloat:1.0];
+    
+    NSArray *locations = [NSArray arrayWithObjects:stopOne, stopTwo, nil];
+    
+    CAGradientLayer *headerLayer = [CAGradientLayer layer];
+    headerLayer.colors = colors;
+    headerLayer.locations = locations;
+    
+    return headerLayer;
+    
+}
+
+- (CAGradientLayer*) greyGradient {
+    
+    UIColor *colorOne = [UIColor colorWithWhite:0.9 alpha:1.0];
+    UIColor *colorTwo = [UIColor colorWithHue:0.625 saturation:0.0 brightness:0.85 alpha:1.0];
+    UIColor *colorThree     = [UIColor colorWithHue:0.625 saturation:0.0 brightness:0.7 alpha:1.0];
+    UIColor *colorFour = [UIColor colorWithHue:0.625 saturation:0.0 brightness:0.4 alpha:1.0];
+    
+    NSArray *colors =  [NSArray arrayWithObjects:(id)colorOne.CGColor, colorTwo.CGColor, colorThree.CGColor, colorFour.CGColor, nil];
+    
+    NSNumber *stopOne = [NSNumber numberWithFloat:0.0];
+    NSNumber *stopTwo = [NSNumber numberWithFloat:0.02];
+    NSNumber *stopThree     = [NSNumber numberWithFloat:0.99];
+    NSNumber *stopFour = [NSNumber numberWithFloat:1.0];
+    
+    NSArray *locations = [NSArray arrayWithObjects:stopOne, stopTwo, stopThree, stopFour, nil];
+    CAGradientLayer *headerLayer = [CAGradientLayer layer];
+    headerLayer.colors = colors;
+    headerLayer.locations = locations;
+    
+    return headerLayer;
+    
+}
+
 
 - (void) forgotPwAction{
     
     if(_emailTf.text.isValidEmail){
         [Utils showAlert:@"" message:[NSString stringWithFormat:@"Do you want reset password account %@",_emailTf.text] completion:^(BOOL action){
-           
             if(action){
-                
                 [[SpinnerView shareInstance] startAnimation];
                 
                 [[FIRAuth auth] sendPasswordResetWithEmail:_emailTf.text
@@ -84,19 +131,11 @@
                                                     }else{
                                                         [Utils showAlert:@"Falure !" message:[error.userInfo objectForKey:@"NSLocalizedDescription"]];
                                                     }
-                                                    
-                                     [[SpinnerView shareInstance] stopAnimation];
-                                                    
+                                                    [[SpinnerView shareInstance] stopAnimation];
                                                 }];
             }
-            
         }];
-        
-       
     }
-    
-    
-    
 }
 
 
@@ -105,10 +144,6 @@
     return YES;
 }
 
-
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    [self.view endEditing:YES];
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -120,7 +155,7 @@
     
     if(_emailTf.text.length && _passwordTf.text.length){
         
-         [[SpinnerView shareInstance] startAnimation];
+        [[SpinnerView shareInstance] startAnimation];
         
         [[FIRAuth auth] signInWithEmail:_emailTf.text
                                password:_passwordTf.text
@@ -128,6 +163,7 @@
                                  
                                  [[SpinnerView shareInstance] stopAnimation];
                                  if(error == nil){
+                                     [self setUser:user];
                                      [self gotoMainViewController];
                                  }else{
                                      [Utils showAlert:@"Login falure !" message:[error.userInfo objectForKey:@"NSLocalizedDescription"]];
@@ -140,8 +176,14 @@
     [GIDSignIn sharedInstance].uiDelegate = self;
     [GIDSignIn sharedInstance].delegate = self;
     [[GIDSignIn sharedInstance] signIn];
-    
+    [[SpinnerView shareInstance] startAnimation];
 }
+
+- (IBAction)loginFaceBookAction:(id)sender {
+    [[SpinnerView shareInstance] startAnimation];
+}
+
+
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue isKindOfClass:[SignUpSegue class]]) {
@@ -159,10 +201,6 @@
 }
 
 
-- (void)perform{
-    
-}
-
 #pragma mark - GOOGLE LOGIN
 - (void)signIn:(GIDSignIn *)signIn didSignInForUser:(GIDGoogleUser *)user
      withError:(NSError *)error {
@@ -172,13 +210,13 @@
                                                                          accessToken:authentication.accessToken];
         [self loginWithCredential:credential];
     } else{
+        [[SpinnerView shareInstance] stopAnimation];
         NSLog(@"%@", error.localizedDescription);
     }
+    
 }
 - (void)signIn:(GIDSignIn *)signIn didDisconnectWithUser:(GIDGoogleUser *)user
      withError:(NSError *)error {
-    
-    
 }
 
 
@@ -192,6 +230,7 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
                                          .tokenString];
         [self loginWithCredential:credential];
     } else {
+        [[SpinnerView shareInstance] stopAnimation];
         NSLog(@"%@", error.localizedDescription);
     }
 }
@@ -204,7 +243,9 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
     
     [[FIRAuth auth] signInWithCredential:credential
                               completion:^(FIRUser *user, NSError *error) {
+                                  [[SpinnerView shareInstance] stopAnimation];
                                   if (!error) {
+                                      [self setUser:user];
                                       [self gotoMainViewController];
                                   }else{
                                       [Utils showAlert:@"Login falure !" message:error.userInfo.description];
@@ -218,5 +259,12 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
     MainViewController *mainVC = [sb instantiateViewControllerWithIdentifier:@"MainViewController"];
     [self.navigationController pushViewController:mainVC animated:YES];
 }
+
+- (void) setUser:(FIRUser*)user{
+    [[User shareInstance] setDisplayName:user.displayName];
+    [[User shareInstance] setEmail:user.email];
+    [[User shareInstance] setPhotoURL:user.photoURL];
+}
+
 
 @end
