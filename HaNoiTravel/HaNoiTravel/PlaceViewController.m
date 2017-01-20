@@ -8,6 +8,7 @@
 
 #import "PlaceViewController.h"
 #import "PlaceMapCell.h"
+#import "PlaceCell.h"
 
 @interface PlaceViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -27,7 +28,10 @@
     frameW = [[UIScreen mainScreen] bounds].size.width;
     frameH = [[UIScreen mainScreen] bounds].size.height;
     placeMapCell = [_tbView dequeueReusableCellWithIdentifier:@"PlaceMapCell"];
-
+    
+    _tbView.estimatedRowHeight = 240;
+    _tbView.rowHeight = UITableViewAutomaticDimension;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,14 +39,33 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    [self.view endEditing:YES];
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 2;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 1;
+    
+    if(section == 0){
+        return 1;
+    }
+    
+    return 10;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return placeMapCell;
     
+    if(indexPath.section == 0){
+        return placeMapCell;
+    }
+    
+    PlaceCell *placeCell = [_tbView dequeueReusableCellWithIdentifier:@"PlaceCell"];
+    return placeCell;
 }
+
 
 
 

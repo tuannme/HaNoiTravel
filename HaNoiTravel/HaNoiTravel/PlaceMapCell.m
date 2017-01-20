@@ -7,25 +7,37 @@
 //
 
 #import "PlaceMapCell.h"
-#import "DUSearchBar.h"
 
-@interface PlaceMapCell()
+
+@interface PlaceMapCell()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet MapView *mapView;
-
-- (IBAction)searchAction:(id)sender;
-- (IBAction)voiceAction:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextField *keywordTf;
 
 @end
 
 @implementation PlaceMapCell{
     void (^searchResult)(NSString*result);
+    NSMutableArray *arrFilter;
 }
 
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     [_mapView startLoadMap];
+    
+    _tbView.delegate = self;
+    _tbView.dataSource = self;
+    _tbView.hidden = YES;
+    
+    _searchBar.layer.masksToBounds = NO;
+    _searchBar.layer.shadowOpacity = 1.f;
+    _searchBar.layer.shadowOffset = CGSizeMake(0, 3);
+    _searchBar.layer.shadowColor = [UIColor lightGrayColor].CGColor;
+    self.keywordTf.delegate = self;
+    
+    arrFilter = [NSMutableArray arrayWithObjects:@"Petrol station",@"Bank",@"ATM",@"Hotel-Motel",@"Park",@"Restaurant", nil];
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -34,21 +46,52 @@
     // Configure the view for the selected state
 }
 
-- (IBAction)searchAction:(id)sender {
-    
-    [[DUSearchBar shareInstance] showWithFrame:CGRectMake(0, 110, [[UIScreen mainScreen] bounds].size.width, 60)];
-    
-    if(searchResult!= nil){
-        
-    }
-    
-}
-
-- (IBAction)voiceAction:(id)sender {
-}
-
 - (void) searchCompletion:(void(^)(NSString*))result{
     searchResult = result;
 }
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField{
+    self.tbView.hidden = YES;
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    return YES;
+}
+
+#pragma mark - Search Bar
+
+- (IBAction)filterAction:(id)sender {
+    self.tbView.hidden = NO;
+}
+
+- (IBAction)deleteAction:(id)sender {
+    self.keywordTf.text = @"";
+}
+
+- (IBAction)voiceAction:(id)sender {
+    
+}
+
+
+#pragma mark - UITableVIew
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return arrFilter.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
+    if(cell == nil){
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+    }
+    cell.textLabel.text = [arrFilter objectAtIndex:indexPath.row];
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    self.tbView.hidden = YES;
+}
+
+
 
 @end

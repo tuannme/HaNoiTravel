@@ -9,7 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "MapView.h"
 
+
 @interface PlaceMapCell : UITableViewCell
+
+@property (weak, nonatomic) IBOutlet UITableView *tbView;
+@property (weak, nonatomic) IBOutlet UIView *searchBar;
 
 - (void) searchCompletion:(void(^)(NSString*))result;
 
