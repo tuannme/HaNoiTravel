@@ -36,7 +36,7 @@
     _searchBar.layer.shadowColor = [UIColor lightGrayColor].CGColor;
     self.keywordTf.delegate = self;
     
-    arrFilter = [NSMutableArray arrayWithObjects:@"Petrol station",@"Bank",@"ATM",@"Hotel-Motel",@"Park",@"Restaurant", nil];
+    arrFilter = [NSMutableArray arrayWithObjects:@"Gas station",@"Hotel",@"ATM", nil];
     
 }
 
@@ -90,6 +90,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     self.tbView.hidden = YES;
+    [self.delegate didFilterCompleted:(int)indexPath.row];
 }
 
 

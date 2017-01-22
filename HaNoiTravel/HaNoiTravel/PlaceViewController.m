@@ -9,8 +9,13 @@
 #import "PlaceViewController.h"
 #import "PlaceMapCell.h"
 #import "PlaceCell.h"
+#import "GasPlaceCell.h"
+#import <FirebaseDatabase/FirebaseDatabase.h>
+#import <FirebaseAuth/FirebaseAuth.h>
 
-@interface PlaceViewController ()<UITableViewDelegate,UITableViewDataSource>
+
+
+@interface PlaceViewController ()<UITableViewDelegate,UITableViewDataSource,PlaceMapCellDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tbView;
 
@@ -21,6 +26,7 @@
     CGFloat frameW;
     CGFloat frameH;
     PlaceMapCell *placeMapCell;
+    Places cureentPlaces;
 }
 
 - (void)viewDidLoad {
@@ -28,10 +34,19 @@
     frameW = [[UIScreen mainScreen] bounds].size.width;
     frameH = [[UIScreen mainScreen] bounds].size.height;
     placeMapCell = [_tbView dequeueReusableCellWithIdentifier:@"PlaceMapCell"];
+    placeMapCell.delegate = self;
+    [placeMapCell searchCompletion:^(NSString *result){
+        
+    }];
     
     _tbView.estimatedRowHeight = 240;
     _tbView.rowHeight = UITableViewAutomaticDimension;
-    
+
+}
+
+- (void)didFilterCompleted:(Places)place{
+    cureentPlaces = place;
+    [self.tbView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -62,8 +77,18 @@
         return placeMapCell;
     }
     
-    PlaceCell *placeCell = [_tbView dequeueReusableCellWithIdentifier:@"PlaceCell"];
-    return placeCell;
+    UITableViewCell *cell = nil;
+    
+    switch (cureentPlaces) {
+        case GAS:
+            cell = [_tbView dequeueReusableCellWithIdentifier:@"GasPlaceCell"];
+            break;
+            
+        default:
+            cell = [_tbView dequeueReusableCellWithIdentifier:@"PlaceCell"];
+            break;
+    }
+    return cell;
 }
 
 
