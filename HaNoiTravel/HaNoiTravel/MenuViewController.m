@@ -10,6 +10,7 @@
 #import "MenuCell.h"
 #import "MenuHeader.h"
 #import "User.h"
+#import "AppDelegate.h"
 
 @interface MenuViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -51,6 +52,23 @@
     headerView.nameLb.text = [[User shareInstance] displayName];
     headerView.avatarImv.layer.cornerRadius = 25;
     headerView.avatarImv.clipsToBounds = YES;
+    
+    [headerView addBlockAction:^(BOOL isLogin){
+        if(isLogin){
+            dispatch_async(dispatch_get_main_queue(), ^{
+                UIStoryboard *accSb = [UIStoryboard storyboardWithName:@"Account" bundle:nil];
+                UIViewController *navi = [accSb instantiateViewControllerWithIdentifier:@"LoginViewController"];
+                [self.navigationController pushViewController:navi animated:YES];
+            });
+        }
+    }];
+    
+    
+    if([[User shareInstance] email] == nil){
+        [headerView.logoutBt setTitle:@"LOGIN" forState:UIControlStateNormal];
+    }else{
+        [headerView.logoutBt setTitle:@"LOGOUT" forState:UIControlStateNormal];
+    }
     
     if([[User shareInstance] photoURL]){
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{

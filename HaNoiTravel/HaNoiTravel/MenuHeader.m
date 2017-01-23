@@ -7,13 +7,32 @@
 //
 
 #import "MenuHeader.h"
+#import "AppDelegate.h"
+#import "User.h"
 
-@implementation MenuHeader
+@interface MenuHeader()
 
+@property(strong,nonatomic) void (^completion)(BOOL);
+
+@end
+
+@implementation MenuHeader{
+    
+}
+
+- (void) addBlockAction:(void(^)(BOOL))completion{
+    self.completion = completion;
+}
 
 - (IBAction)logoutAction:(id)sender {
     
-    
-    
+    if([[User shareInstance] email] != nil){
+        [[User shareInstance] setEmail:nil];
+        [[User shareInstance] setPassword:nil];
+        [self.logoutBt setTitle:@"LOGIN" forState:UIControlStateNormal];
+        _completion(NO);
+    }else{
+        _completion(YES);
+    }
 }
 @end

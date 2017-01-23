@@ -262,10 +262,17 @@ didCompleteWithResult:(FBSDKLoginManagerLoginResult *)result
 }
 
 - (void) setUser:(FIRUser*)user{
+
+    
     [[User shareInstance] setDisplayName:user.displayName];
     [[User shareInstance] setEmail:user.email];
     [[User shareInstance] setPhotoURL:user.photoURL];
 }
 
 
+- (IBAction)backAction:(id)sender {
+    
+    [self.navigationController popViewControllerAnimated:YES];
+    
+}
 @end

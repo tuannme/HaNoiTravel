@@ -24,4 +24,13 @@
     // Configure the view for the selected state
 }
 
+- (void) configWithGasStatin:(GasStation*)gas{
+    
+    self.name.text = gas.name;
+    self.address.text = gas.address;
+    self.location.text = gas.distanceStr;
+    
+}
+
+
 @end

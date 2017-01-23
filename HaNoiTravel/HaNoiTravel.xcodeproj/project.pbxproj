@@ -36,6 +36,9 @@
 		1A823F1F1E2C7615009CDB52 /* MenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A823F1D1E2C7615009CDB52 /* MenuCell.m */; };
 		1A823F201E2C7615009CDB52 /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A823F1E1E2C7615009CDB52 /* MenuCell.xib */; };
 		1A823F231E2C7A67009CDB52 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A823F221E2C7A67009CDB52 /* User.m */; };
+		1A909DBB1E35A5B300919395 /* StartMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A909DBA1E35A5B300919395 /* StartMapViewController.m */; };
+		1A909DBD1E35A92A00919395 /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A909DBC1E35A92A00919395 /* Account.storyboard */; };
+		1A909DC01E35D4D000919395 /* ic_back_black.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A909DBF1E35D4D000919395 /* ic_back_black.png */; };
 		1AE44A191E306A0D00C9A1CF /* TalkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE44A181E306A0D00C9A1CF /* TalkViewController.m */; };
 		1AE44A1C1E306A1E00C9A1CF /* PromotionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE44A1B1E306A1E00C9A1CF /* PromotionViewController.m */; };
 		1AE44A1E1E307CCF00C9A1CF /* ic_voice.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AE44A1D1E307CCF00C9A1CF /* ic_voice.png */; };
@@ -146,6 +149,10 @@
 		1A823F1E1E2C7615009CDB52 /* MenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
 		1A823F211E2C7A67009CDB52 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		1A823F221E2C7A67009CDB52 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		1A909DB91E35A5B300919395 /* StartMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartMapViewController.h; sourceTree = "<group>"; };
+		1A909DBA1E35A5B300919395 /* StartMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartMapViewController.m; sourceTree = "<group>"; };
+		1A909DBC1E35A92A00919395 /* Account.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Account.storyboard; sourceTree = "<group>"; };
+		1A909DBF1E35D4D000919395 /* ic_back_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_back_black.png; sourceTree = "<group>"; };
 		1AE44A141E3055A100C9A1CF /* HaNoiTravel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HaNoiTravel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AE44A171E306A0D00C9A1CF /* TalkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkViewController.h; sourceTree = "<group>"; };
 		1AE44A181E306A0D00C9A1CF /* TalkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkViewController.m; sourceTree = "<group>"; };
@@ -250,6 +257,7 @@
 				163570341D5B02B50093CDF5 /* AppDelegate.h */,
 				163570351D5B02B50093CDF5 /* AppDelegate.m */,
 				1635703A1D5B02B50093CDF5 /* Main.storyboard */,
+				1A909DBC1E35A92A00919395 /* Account.storyboard */,
 				1635703D1D5B02B50093CDF5 /* Assets.xcassets */,
 				1635703F1D5B02B50093CDF5 /* LaunchScreen.storyboard */,
 				163570311D5B02B50093CDF5 /* Supporting Files */,
@@ -295,13 +303,11 @@
 		1A1F8A221E24C24300E2A0FA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				1A909DBE1E35AA5300919395 /* Main */,
+				1A909DB81E35A58C00919395 /* StartMap */,
 				1A2793B01E28D1BA00F15658 /* TabContent */,
 				1A2793AF1E28D1A300F15658 /* Login */,
 				CA3781F71E27C54E00328C2D /* SlideMenu */,
-				163570671D5C24AD0093CDF5 /* MainViewController.h */,
-				163570681D5C24AD0093CDF5 /* MainViewController.m */,
-				1A3E0E901E2893080059C6F7 /* RootViewController.h */,
-				1A3E0E911E2893080059C6F7 /* RootViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -359,6 +365,7 @@
 		1A1F8A3A1E26300200E2A0FA /* Icon */ = {
 			isa = PBXGroup;
 			children = (
+				1A909DBF1E35D4D000919395 /* ic_back_black.png */,
 				CA91598B1E34CE92001DB5CD /* icon_stars */,
 				1A718BDD1E31B1C100ABAE8B /* ic_voice_red.png */,
 				1AE44A4E1E30BEE600C9A1CF /* ic_back.png */,
@@ -430,6 +437,26 @@
 				1A823F1E1E2C7615009CDB52 /* MenuCell.xib */,
 			);
 			name = MenuSubView;
+			sourceTree = "<group>";
+		};
+		1A909DB81E35A58C00919395 /* StartMap */ = {
+			isa = PBXGroup;
+			children = (
+				1A909DB91E35A5B300919395 /* StartMapViewController.h */,
+				1A909DBA1E35A5B300919395 /* StartMapViewController.m */,
+			);
+			name = StartMap;
+			sourceTree = "<group>";
+		};
+		1A909DBE1E35AA5300919395 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				163570671D5C24AD0093CDF5 /* MainViewController.h */,
+				163570681D5C24AD0093CDF5 /* MainViewController.m */,
+				1A3E0E901E2893080059C6F7 /* RootViewController.h */,
+				1A3E0E911E2893080059C6F7 /* RootViewController.m */,
+			);
+			name = Main;
 			sourceTree = "<group>";
 		};
 		1AE44A211E307E2F00C9A1CF /* PlaceView */ = {
@@ -632,7 +659,7 @@
 				TargetAttributes = {
 					1635702D1D5B02B50093CDF5 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = N33STSQU9K;
+						DevelopmentTeam = 9ZZR5T4Q5D;
 					};
 					163570461D5B02B50093CDF5 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -691,10 +718,12 @@
 				CA9159981E34CE92001DB5CD /* stars0.5.png in Resources */,
 				1A823F181E2C74DA009CDB52 /* MenuHeader.xib in Resources */,
 				CA42D8D91E26615A00A1F574 /* ic_close_blue.png in Resources */,
+				1A909DBD1E35A92A00919395 /* Account.storyboard in Resources */,
 				CA91598A1E34C9BF001DB5CD /* gas_icon.png in Resources */,
 				1AE44A1E1E307CCF00C9A1CF /* ic_voice.png in Resources */,
 				CA91599F1E34CE92001DB5CD /* stars4.0.png in Resources */,
 				1A1F8A3C1E26300200E2A0FA /* ic_close.png in Resources */,
+				1A909DC01E35D4D000919395 /* ic_back_black.png in Resources */,
 				1635703C1D5B02B50093CDF5 /* Main.storyboard in Resources */,
 				1A1F8A2D1E24C7E800E2A0FA /* bg_field_up.png in Resources */,
 				CA9159A11E34CE92001DB5CD /* stars5.0.png in Resources */,
@@ -762,7 +791,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -794,6 +823,7 @@
 				1AE44A4D1E30BDDC00C9A1CF /* PlaceDetailViewController.m in Sources */,
 				1AE44A241E307E5300C9A1CF /* PlaceMapCell.m in Sources */,
 				1A1F8A271E24C28B00E2A0FA /* LoginViewController.m in Sources */,
+				1A909DBB1E35A5B300919395 /* StartMapViewController.m in Sources */,
 				1A823F1F1E2C7615009CDB52 /* MenuCell.m in Sources */,
 				CA9159821E34BA25001DB5CD /* PlacesManager.m in Sources */,
 				1A823F231E2C7A67009CDB52 /* User.m in Sources */,
@@ -946,7 +976,7 @@
 			baseConfigurationReference = 8F8408FA8DF0472614964C22 /* Pods-HaNoiTravel.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = N33STSQU9K;
+				DEVELOPMENT_TEAM = 9ZZR5T4Q5D;
 				INFOPLIST_FILE = HaNoiTravel/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -960,7 +990,7 @@
 			baseConfigurationReference = 98E89EB3F93B6D26F79BB7D7 /* Pods-HaNoiTravel.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = N33STSQU9K;
+				DEVELOPMENT_TEAM = 9ZZR5T4Q5D;
 				INFOPLIST_FILE = HaNoiTravel/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

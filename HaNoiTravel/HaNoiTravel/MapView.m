@@ -10,6 +10,8 @@
 #import "DirectionService.h"
 #import <GoogleMaps/GoogleMaps.h>
 #import <CoreLocation/CoreLocation.h>
+#import "AFNetworking.h"
+#import "User.h"
 
 @interface MapView ()<GMSMapViewDelegate,CLLocationManagerDelegate>
 
@@ -22,6 +24,8 @@
     NSMutableArray *waypoints_;
     NSMutableArray *waypointStrings_;
     CLLocationManager *locationManager;
+    
+    BOOL isShowDirection;
 }
 
 - (id) initWithFrame:(CGRect)frame{
@@ -32,6 +36,9 @@
 }
 
 - (void) startLoadMap{
+    
+    waypoints_ = [[NSMutableArray alloc]init];
+    waypointStrings_ = [[NSMutableArray alloc]init];
     
     locationManager = [[CLLocationManager alloc] init];
     locationManager.delegate = self;
@@ -45,30 +52,92 @@
     [locationManager startUpdatingLocation];
 }
 
-#pragma mark - GMSMapViewDelegate
-- (void)mapView:(GMSMapView *)mapView didTapAtCoordinate:
-(CLLocationCoordinate2D)coordinate {
+- (void) showDirection:(BOOL)show{
+    isShowDirection = show;
+}
+
+- (void) resetMapAtAddress:(NSString*) address{
+    //https://maps.googleapis.com/maps/api/geocode/json?address=대한민국 경기도 김포시&key=AIzaSyD1QCgT0qX-BfkHBIxOG3UemOGpEA1FT_0
     
-    CLLocationCoordinate2D position = CLLocationCoordinate2DMake(coordinate.latitude,coordinate.longitude);
-    GMSMarker *marker = [GMSMarker markerWithPosition:position];
-    marker.map = mapView_;
-    [waypoints_ addObject:marker];
-    NSString *positionString = [[NSString alloc] initWithFormat:@"%f,%f",
-                                coordinate.latitude,coordinate.longitude];
-    [waypointStrings_ addObject:positionString];
-    if([waypoints_ count]>1){
-        NSString *sensor = @"false";
-        NSArray *parameters = [NSArray arrayWithObjects:sensor, waypointStrings_,
-                               nil];
-        NSArray *keys = [NSArray arrayWithObjects:@"sensor", @"waypoints", nil];
-        NSDictionary *query = [NSDictionary dictionaryWithObjects:parameters
-                                                          forKeys:keys];
-        DirectionService *mds=[[DirectionService alloc] init];
-        SEL selector = @selector(addDirections:);
-        [mds setDirectionsQuery:query
-                   withSelector:selector
-                   withDelegate:self];
+    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:@"https://maps.googleapis.com"]];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    
+    NSString *path = [NSString stringWithFormat:@"maps/api/geocode/json?address=%@&key=AIzaSyBJXeGpMwsRCdK-sKgvAMsax0RZV2wY5X4",address];
+    path = [path stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    //대한민국 경기도 김포시
+    
+    [manager GET:path parameters:nil progress:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+        
+        NSString *status = [responseObject objectForKey:@"status"];
+        if([status isEqualToString:@"OK"]){
+            id result = [responseObject objectForKey:@"results"];
+            id geoObj = [result lastObject];
+            id geometry = [geoObj objectForKey:@"geometry"];
+            id location = [geometry objectForKey:@"location"];
+            
+            float lat = [[location objectForKey:@"lat"] floatValue];
+            float lng = [[location objectForKey:@"lng"] floatValue];
+            
+            NSString *address = [geoObj objectForKey:@"formatted_address"];
+            
+            [[User shareInstance] setLatitude:lat];
+            [[User shareInstance] setLongitude:lng];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self showMap:lat lgn:lng address:address];
+            });
+            
+        }else{
+            UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"검색 실패" message:@"해당 지역을 검색할 수 없습니다." delegate:nil cancelButtonTitle:@"확인" otherButtonTitles:nil, nil];
+            [alert show];
+            return ;
+        }
+        
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        NSLog(@"ERROR MAP : %@",error);
+    }];
+    
+}
+
+#pragma mark - GMSMapViewDelegate
+- (void)mapView:(GMSMapView *)mapView didTapAtCoordinate:(CLLocationCoordinate2D)coordinate {
+    
+    if(!isShowDirection){
+        [mapView_ clear];
+        [[User shareInstance] setLatitude:coordinate.latitude];
+        [[User shareInstance] setLongitude:coordinate.longitude];
+        [self getAddressWithLatitude:coordinate.latitude longitude:coordinate.longitude completion:^(NSString *address){
+            [self showMap:coordinate.latitude lgn:coordinate.longitude address:address];
+        }];
+        
+    }else{
+        CLLocationCoordinate2D position = CLLocationCoordinate2DMake(coordinate.latitude,coordinate.longitude);
+        GMSMarker *marker = [GMSMarker markerWithPosition:position];
+        marker.map = mapView_;
+        
+        [waypoints_ addObject:marker];
+        NSString *positionString = [[NSString alloc] initWithFormat:@"%f,%f",
+                                    coordinate.latitude,coordinate.longitude];
+        [waypointStrings_ addObject:positionString];
+        if([waypoints_ count]>1){
+            NSString *sensor = @"false";
+            NSArray *parameters = [NSArray arrayWithObjects:sensor, waypointStrings_,
+                                   nil];
+            NSArray *keys = [NSArray arrayWithObjects:@"sensor", @"waypoints", nil];
+            NSDictionary *query = [NSDictionary dictionaryWithObjects:parameters
+                                                              forKeys:keys];
+            DirectionService *mds=[[DirectionService alloc] init];
+            SEL selector = @selector(addDirections:);
+            [mds setDirectionsQuery:query
+                       withSelector:selector
+                       withDelegate:self];
+        }
+        
     }
+    
+    
+    
 }
 - (void)addDirections:(NSDictionary *)json {
     
@@ -89,15 +158,56 @@
    didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation{
     [locationManager stopUpdatingLocation];
     
-    waypoints_ = [[NSMutableArray alloc]init];
-    waypointStrings_ = [[NSMutableArray alloc]init];
-    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:newLocation.coordinate.latitude
-                                                            longitude:newLocation.coordinate.longitude
-                                                                 zoom:13];
+    [self getAddressWithLatitude:newLocation.coordinate.latitude longitude:newLocation.coordinate.longitude completion:^(NSString *address){
+        [self showMap:newLocation.coordinate.latitude lgn:newLocation.coordinate.longitude address:address];
+        
+    }];
+}
+
+- (void) getAddressWithLatitude:(CGFloat)lat longitude:(CGFloat)lgn completion:(void(^)(NSString *address))completion{
+    
+    GMSGeocoder* geocoder = [[GMSGeocoder alloc] init];
+    [geocoder reverseGeocodeCoordinate:CLLocationCoordinate2DMake(lat, lgn)
+                     completionHandler:^(GMSReverseGeocodeResponse *placeMarks, NSError *error) {
+                         if (!error)
+                         {
+                             NSMutableString *address = [NSMutableString stringWithString:@""];
+                             
+                             GMSAddress* result = [placeMarks firstResult]; //첫번째 결과값
+                             if(result.administrativeArea != nil)
+                                 [address appendString:[result.administrativeArea stringByAppendingString:@" "]];
+                             if(result.locality != nil)
+                                 [address appendString:[result.locality stringByAppendingString:@" "]];
+                             if(result.subLocality != nil)
+                                 [address appendString:[result.subLocality stringByAppendingString:@" "]];
+                             if(result.thoroughfare != nil)
+                                 [address appendString:[result.thoroughfare stringByAppendingString:@" "]];
+                             completion(address);
+                         }
+                     }];
+    
+    
+}
+
+-(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
+    
+    [self showMap:21.024303 lgn:105.841093 address:@"Ga Hà Nội"];
+}
+
+- (void) showMap:(CGFloat)lat lgn:(CGFloat)lgn address:(NSString*)address{
+    [mapView_ clear];
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:lat
+                                                            longitude:lgn
+                                                                 zoom:17];
     mapView_ = [GMSMapView mapWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height) camera:camera];
     mapView_.delegate = self;
     [self addSubview:mapView_];
-    //[self.view addSubview:mapView_];
+    
+    CLLocationCoordinate2D position = CLLocationCoordinate2DMake(lat,lgn);
+    GMSMarker *marker = [GMSMarker markerWithPosition:position];
+    marker.map = mapView_;
+    marker.title = address;
+    
 }
 
 @end

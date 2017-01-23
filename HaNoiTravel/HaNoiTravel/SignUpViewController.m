@@ -69,8 +69,9 @@
 }
 
 - (IBAction)closeAction:(id)sender {
-    [self removeFromParentViewController];
     [self.view removeFromSuperview];
+    [self removeFromParentViewController];
+    
 }
 - (IBAction)signUpAction:(id)sender {
     if(_emailTf.text.length && [_emailTf.text isValidEmail]){

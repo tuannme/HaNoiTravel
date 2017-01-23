@@ -18,24 +18,29 @@
 }
 
 
+
 - (void) getPlaceCompletion:(void(^)(NSMutableArray*))result{
     
     if(_gasPlaces == nil){
-        _gasPlaces = [NSMutableArray array];
+
         FIRDatabaseReference *ref = [[FIRDatabase database] reference];
         
         [[[ref child:@"Places"] child:@"Gas"] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
             
+            NSMutableArray *arrGas = [NSMutableArray array];
+            
             id value = snapshot.value;
-            if([value isKindOfClass:[NSArray class]]){
-                for(NSDictionary *dic in value){
-                    GasStation *gas = [[GasStation alloc] initWithDic:dic];
-                    [_gasPlaces addObject:gas];
-                }
+            
+            for(NSDictionary *dic in [value allValues]){
+                GasStation *gas = [[GasStation alloc] initWithDic:dic];
+                [arrGas addObject:gas];
             }
+       
+            _gasPlaces = [NSMutableArray arrayWithArray:[self sortDistance:arrGas]];
+            result(_gasPlaces);
             
         } withCancelBlock:^(NSError * _Nonnull error) {
-            NSLog(@"%@", error.localizedDescription);
+            NSLog(@"%@", error);
             result(nil);
         }];
 
@@ -45,5 +50,21 @@
     }
 
 }
+
+- (NSArray*) sortDistance:(NSArray*)arrOrigin{
+    NSArray *arraySort = [arrOrigin sortedArrayUsingComparator:^(id obj1, id obj2){
+        GasStation *gas1 = obj1;
+        GasStation *gas2 = obj2;
+        
+        if (gas1.distance > gas2.distance) {
+            return (NSComparisonResult)NSOrderedDescending;
+        } else if (gas1.distance  < gas2.distance) {
+            return (NSComparisonResult)NSOrderedAscending ;
+        }
+        return (NSComparisonResult)NSOrderedSame;
+    }];
+    return arraySort;
+}
+
 
 @end

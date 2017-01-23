@@ -54,6 +54,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="avatarImv" destination="fks-SZ-yhI" id="DoN-lh-O04"/>
+                <outlet property="logoutBt" destination="0my-Lv-Zip" id="r94-kL-vQf"/>
                 <outlet property="nameLb" destination="8eR-kQ-07Y" id="ijs-SK-nWD"/>
             </connections>
             <point key="canvasLocation" x="24.5" y="23"/>

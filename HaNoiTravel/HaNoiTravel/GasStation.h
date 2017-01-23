@@ -21,4 +21,7 @@
 @property (assign,nonatomic) CGFloat longitude;
 @property (assign,nonatomic) NSInteger star;
 
+@property (assign,nonatomic) CGFloat distance;
+@property (strong,nonatomic) NSString *distanceStr;
+
 @end

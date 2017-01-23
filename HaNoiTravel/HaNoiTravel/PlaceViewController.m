@@ -10,10 +10,9 @@
 #import "PlaceMapCell.h"
 #import "PlaceCell.h"
 #import "GasPlaceCell.h"
+#import "GasManager.h"
 #import <FirebaseDatabase/FirebaseDatabase.h>
 #import <FirebaseAuth/FirebaseAuth.h>
-
-
 
 @interface PlaceViewController ()<UITableViewDelegate,UITableViewDataSource,PlaceMapCellDelegate>
 
@@ -22,11 +21,13 @@
 @end
 
 @implementation PlaceViewController{
-
+    
     CGFloat frameW;
     CGFloat frameH;
     PlaceMapCell *placeMapCell;
     Places cureentPlaces;
+
+    NSMutableArray *arrGas;
 }
 
 - (void)viewDidLoad {
@@ -41,7 +42,15 @@
     
     _tbView.estimatedRowHeight = 240;
     _tbView.rowHeight = UITableViewAutomaticDimension;
-
+    
+    GasManager *gasManager = [[GasManager alloc] init];
+    [gasManager getPlaceCompletion:^(NSMutableArray *result){
+        arrGas = result;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tbView reloadData];
+        });
+    }];
+    
 }
 
 - (void)didFilterCompleted:(Places)place{
@@ -68,7 +77,16 @@
         return 1;
     }
     
-    return 10;
+    switch (cureentPlaces) {
+        case GAS:
+            return arrGas.count;
+            break;
+        default:
+            return 10;
+            break;
+    }
+    
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -82,6 +100,7 @@
     switch (cureentPlaces) {
         case GAS:
             cell = [_tbView dequeueReusableCellWithIdentifier:@"GasPlaceCell"];
+            [(GasPlaceCell*)cell configWithGasStatin:[arrGas objectAtIndex:indexPath.row]];
             break;
             
         default:
@@ -90,7 +109,6 @@
     }
     return cell;
 }
-
 
 
 

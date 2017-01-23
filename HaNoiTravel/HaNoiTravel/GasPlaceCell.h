@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GasStation.h"
 
 @interface GasPlaceCell : UITableViewCell
 
@@ -16,5 +17,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *address;
 @property (weak, nonatomic) IBOutlet UILabel *location;
 
+- (void) configWithGasStatin:(GasStation*)gas;
 
 @end

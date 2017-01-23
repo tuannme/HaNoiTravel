@@ -10,9 +10,12 @@
 
 static User *user = nil;
 
+
 @implementation User{
    
 }
+
+@synthesize latitude;
 
 + (id) shareInstance{
     if(user == nil){
@@ -20,6 +23,7 @@ static User *user = nil;
     }
     return user;
 }
+
 
 
 @end

@@ -27,7 +27,6 @@
     
     desFrame.origin.y =  0;
     
-    
     [UIView animateWithDuration:1.0f delay:0.0f usingSpringWithDamping:0.4f initialSpringVelocity:0.5 options:UIViewAnimationOptionCurveEaseOut animations:^{
         destinationViewController.view.frame = desFrame;
     }completion:^(BOOL finished){

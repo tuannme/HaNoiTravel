@@ -12,4 +12,5 @@ target 'HaNoiTravel' do
   pod 'GoogleSignIn'
   pod 'FBSDKCoreKit'
   pod 'FBSDKLoginKit'
+  pod 'AFNetworking', '~> 3.0'
 end

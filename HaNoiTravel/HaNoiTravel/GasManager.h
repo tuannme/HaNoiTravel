@@ -10,4 +10,5 @@
 
 @interface GasManager : PlacesManager
 
+
 @end

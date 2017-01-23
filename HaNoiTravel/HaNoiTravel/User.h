@@ -15,6 +15,10 @@
 
 @property (strong,nonatomic ) NSString *displayName;
 @property (strong,nonatomic) NSString *email;
+@property (strong,nonatomic) NSString *password;
 @property (strong,nonatomic) NSURL *photoURL;
+
+@property (assign,nonatomic) CGFloat latitude;
+@property (assign,nonatomic) CGFloat longitude;
 
 @end

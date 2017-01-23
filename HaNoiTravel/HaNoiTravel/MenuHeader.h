@@ -12,6 +12,10 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImv;
 @property (weak, nonatomic) IBOutlet UILabel *nameLb;
+@property (weak, nonatomic) IBOutlet UIButton *logoutBt;
+
 - (IBAction)logoutAction:(id)sender;
+
+- (void) addBlockAction:(void(^)(BOOL))completion;
 
 @end

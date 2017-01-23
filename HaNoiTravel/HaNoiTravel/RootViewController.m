@@ -22,7 +22,7 @@
     [self setLeftViewController:_menuVC];
     
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    _loginNavi  = [sb instantiateViewControllerWithIdentifier:@"LoginNavi"];
+    _loginNavi  = [sb instantiateViewControllerWithIdentifier:@"StartMapNavi"];
     [self setMainNavi:_loginNavi];
     
 }

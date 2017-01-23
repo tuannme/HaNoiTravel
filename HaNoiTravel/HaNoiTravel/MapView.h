@@ -11,5 +11,7 @@
 @interface MapView : UIView
 
 - (void) startLoadMap;
+- (void) resetMapAtAddress:(NSString*) address;
+- (void) showDirection:(BOOL)show;
 
 @end

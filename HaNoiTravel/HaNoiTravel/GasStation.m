@@ -7,6 +7,8 @@
 //
 
 #import "GasStation.h"
+#import "User.h"
+#import <CoreLocation/CoreLocation.h>
 
 @implementation GasStation
 
@@ -19,6 +21,14 @@
     self.longitude = [dic[@"longitude"] floatValue];
     //self.star = [dic[@"star"] integerValue];
 
+    CLLocation *startLocation = [[CLLocation alloc] initWithLatitude:self.latitude longitude:self.longitude];
+    CLLocation *endLocation = [[CLLocation alloc] initWithLatitude:[[User shareInstance] latitude] longitude:[[User shareInstance] longitude]];
+    _distance = [startLocation distanceFromLocation:endLocation]/1000;
+    
+    NSLog(@"distance = %f",_distance);
+    
+    self.distanceStr = [NSString stringWithFormat:@"%.1f km",_distance];
+    
     return self;
 }
 
