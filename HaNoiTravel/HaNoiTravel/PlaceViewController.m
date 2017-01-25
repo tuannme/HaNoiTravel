@@ -47,6 +47,7 @@
     [gasManager getPlaceCompletion:^(NSMutableArray *result){
         arrGas = result;
         dispatch_async(dispatch_get_main_queue(), ^{
+            [placeMapCell.mapView setPlaces:arrGas withIcon:@"gas_icon.png"];
             [self.tbView reloadData];
         });
     }];

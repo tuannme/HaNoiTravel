@@ -25,6 +25,7 @@ typedef enum{
 @interface PlaceMapCell : UITableViewCell
 
 @property (weak,nonatomic) id<PlaceMapCellDelegate> delegate;
+@property (weak, nonatomic) IBOutlet MapView *mapView;
 @property (weak, nonatomic) IBOutlet UITableView *tbView;
 @property (weak, nonatomic) IBOutlet UIView *searchBar;
 

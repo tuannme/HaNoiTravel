@@ -39,6 +39,10 @@
 		1A909DBB1E35A5B300919395 /* StartMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A909DBA1E35A5B300919395 /* StartMapViewController.m */; };
 		1A909DBD1E35A92A00919395 /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A909DBC1E35A92A00919395 /* Account.storyboard */; };
 		1A909DC01E35D4D000919395 /* ic_back_black.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A909DBF1E35D4D000919395 /* ic_back_black.png */; };
+		1A9A3B771E3886CD003D6A4C /* ic_120.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A9A3B741E3886CD003D6A4C /* ic_120.png */; };
+		1A9A3B781E3886CD003D6A4C /* ic_180.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A9A3B751E3886CD003D6A4C /* ic_180.png */; };
+		1A9A3B791E3886CD003D6A4C /* ic_60.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A9A3B761E3886CD003D6A4C /* ic_60.png */; };
+		1A9A3B7C1E3887F2003D6A4C /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9A3B7B1E3887F2003D6A4C /* Place.m */; };
 		1AE44A191E306A0D00C9A1CF /* TalkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE44A181E306A0D00C9A1CF /* TalkViewController.m */; };
 		1AE44A1C1E306A1E00C9A1CF /* PromotionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE44A1B1E306A1E00C9A1CF /* PromotionViewController.m */; };
 		1AE44A1E1E307CCF00C9A1CF /* ic_voice.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AE44A1D1E307CCF00C9A1CF /* ic_voice.png */; };
@@ -153,7 +157,13 @@
 		1A909DBA1E35A5B300919395 /* StartMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartMapViewController.m; sourceTree = "<group>"; };
 		1A909DBC1E35A92A00919395 /* Account.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Account.storyboard; sourceTree = "<group>"; };
 		1A909DBF1E35D4D000919395 /* ic_back_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_back_black.png; sourceTree = "<group>"; };
-		1AE44A141E3055A100C9A1CF /* HaNoiTravel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HaNoiTravel.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A9A3B711E388428003D6A4C /* HaNoiTravel.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HaNoiTravel.entitlements; sourceTree = "<group>"; };
+		1A9A3B741E3886CD003D6A4C /* ic_120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_120.png; sourceTree = "<group>"; };
+		1A9A3B751E3886CD003D6A4C /* ic_180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_180.png; sourceTree = "<group>"; };
+		1A9A3B761E3886CD003D6A4C /* ic_60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_60.png; sourceTree = "<group>"; };
+		1A9A3B7A1E3887F2003D6A4C /* Place.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Place.h; sourceTree = "<group>"; };
+		1A9A3B7B1E3887F2003D6A4C /* Place.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Place.m; sourceTree = "<group>"; };
+		1AE44A141E3055A100C9A1CF /* HaNoiPlaces.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HaNoiPlaces.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AE44A171E306A0D00C9A1CF /* TalkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkViewController.h; sourceTree = "<group>"; };
 		1AE44A181E306A0D00C9A1CF /* TalkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkViewController.m; sourceTree = "<group>"; };
 		1AE44A1A1E306A1E00C9A1CF /* PromotionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PromotionViewController.h; sourceTree = "<group>"; };
@@ -241,7 +251,7 @@
 				163570551D5B02B50093CDF5 /* HaNoiTravelUITests */,
 				BE855AA05BD081A626988666 /* Pods */,
 				337757E6D50635DCECACAA73 /* Frameworks */,
-				1AE44A141E3055A100C9A1CF /* HaNoiTravel.app */,
+				1AE44A141E3055A100C9A1CF /* HaNoiPlaces.app */,
 				CA61A9271E322E8A0026A9FF /* HaNoiTravelTests.xctest */,
 				CA61A9281E322E8A0026A9FF /* HaNoiTravelUITests.xctest */,
 			);
@@ -250,6 +260,7 @@
 		163570301D5B02B50093CDF5 /* HaNoiTravel */ = {
 			isa = PBXGroup;
 			children = (
+				1A9A3B711E388428003D6A4C /* HaNoiTravel.entitlements */,
 				1A3E0E941E2893930059C6F7 /* Lib */,
 				1A1F8A241E24C25900E2A0FA /* View */,
 				1A1F8A231E24C24F00E2A0FA /* Model */,
@@ -341,6 +352,7 @@
 		1A1F8A281E24C6CF00E2A0FA /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				1A9A3B731E3886CD003D6A4C /* AppIcon */,
 				CA9159881E34C9BF001DB5CD /* Places */,
 				1A718BED1E31F34400ABAE8B /* bg_test.jpg */,
 				CA42D8E31E267F5200A1F574 /* Spinner */,
@@ -365,10 +377,10 @@
 		1A1F8A3A1E26300200E2A0FA /* Icon */ = {
 			isa = PBXGroup;
 			children = (
-				1A909DBF1E35D4D000919395 /* ic_back_black.png */,
 				CA91598B1E34CE92001DB5CD /* icon_stars */,
 				1A718BDD1E31B1C100ABAE8B /* ic_voice_red.png */,
 				1AE44A4E1E30BEE600C9A1CF /* ic_back.png */,
+				1A909DBF1E35D4D000919395 /* ic_back_black.png */,
 				1AE44A1F1E307DCA00C9A1CF /* ic_search.png */,
 				1AE44A1D1E307CCF00C9A1CF /* ic_voice.png */,
 				CA42D8D81E26615A00A1F574 /* ic_close_blue.png */,
@@ -457,6 +469,17 @@
 				1A3E0E911E2893080059C6F7 /* RootViewController.m */,
 			);
 			name = Main;
+			sourceTree = "<group>";
+		};
+		1A9A3B731E3886CD003D6A4C /* AppIcon */ = {
+			isa = PBXGroup;
+			children = (
+				1A9A3B741E3886CD003D6A4C /* ic_120.png */,
+				1A9A3B751E3886CD003D6A4C /* ic_180.png */,
+				1A9A3B761E3886CD003D6A4C /* ic_60.png */,
+			);
+			name = AppIcon;
+			path = Resource/AppIcon;
 			sourceTree = "<group>";
 		};
 		1AE44A211E307E2F00C9A1CF /* PlaceView */ = {
@@ -551,6 +574,8 @@
 		CA9159831E34BD4D001DB5CD /* Places */ = {
 			isa = PBXGroup;
 			children = (
+				1A9A3B7A1E3887F2003D6A4C /* Place.h */,
+				1A9A3B7B1E3887F2003D6A4C /* Place.m */,
 				CA91597D1E34B7F6001DB5CD /* GasStation.h */,
 				CA91597E1E34B7F6001DB5CD /* GasStation.m */,
 				CA9159801E34BA25001DB5CD /* PlacesManager.h */,
@@ -609,7 +634,7 @@
 			);
 			name = HaNoiTravel;
 			productName = HaNoiTravel;
-			productReference = 1AE44A141E3055A100C9A1CF /* HaNoiTravel.app */;
+			productReference = 1AE44A141E3055A100C9A1CF /* HaNoiPlaces.app */;
 			productType = "com.apple.product-type.application";
 		};
 		163570461D5B02B50093CDF5 /* HaNoiTravelTests */ = {
@@ -660,6 +685,11 @@
 					1635702D1D5B02B50093CDF5 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 9ZZR5T4Q5D;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					163570461D5B02B50093CDF5 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -701,6 +731,7 @@
 				CA9159971E34CE92001DB5CD /* stars0.0.png in Resources */,
 				CA9159A01E34CE92001DB5CD /* stars4.5.png in Resources */,
 				1A718BEE1E31F34400ABAE8B /* bg_test.jpg in Resources */,
+				1A9A3B781E3886CD003D6A4C /* ic_180.png in Resources */,
 				CA42D8E81E268C0500A1F574 /* spinner_blue.png in Resources */,
 				CA91599D1E34CE92001DB5CD /* stars3.0.png in Resources */,
 				CA91599B1E34CE92001DB5CD /* stars2.0.png in Resources */,
@@ -712,6 +743,7 @@
 				1A1F8A211E249E7300E2A0FA /* GoogleService-Info.plist in Resources */,
 				1A1F8A321E25D22100E2A0FA /* ic_facebook.png in Resources */,
 				1635703E1D5B02B50093CDF5 /* Assets.xcassets in Resources */,
+				1A9A3B791E3886CD003D6A4C /* ic_60.png in Resources */,
 				1A1F8A2F1E24CA4200E2A0FA /* bg_field_down.png in Resources */,
 				CA91599E1E34CE92001DB5CD /* stars3.5.png in Resources */,
 				1A718BDE1E31B1C100ABAE8B /* ic_voice_red.png in Resources */,
@@ -721,6 +753,7 @@
 				1A909DBD1E35A92A00919395 /* Account.storyboard in Resources */,
 				CA91598A1E34C9BF001DB5CD /* gas_icon.png in Resources */,
 				1AE44A1E1E307CCF00C9A1CF /* ic_voice.png in Resources */,
+				1A9A3B771E3886CD003D6A4C /* ic_120.png in Resources */,
 				CA91599F1E34CE92001DB5CD /* stars4.0.png in Resources */,
 				1A1F8A3C1E26300200E2A0FA /* ic_close.png in Resources */,
 				1A909DC01E35D4D000919395 /* ic_back_black.png in Resources */,
@@ -824,6 +857,7 @@
 				1AE44A241E307E5300C9A1CF /* PlaceMapCell.m in Sources */,
 				1A1F8A271E24C28B00E2A0FA /* LoginViewController.m in Sources */,
 				1A909DBB1E35A5B300919395 /* StartMapViewController.m in Sources */,
+				1A9A3B7C1E3887F2003D6A4C /* Place.m in Sources */,
 				1A823F1F1E2C7615009CDB52 /* MenuCell.m in Sources */,
 				CA9159821E34BA25001DB5CD /* PlacesManager.m in Sources */,
 				1A823F231E2C7A67009CDB52 /* User.m in Sources */,
@@ -976,12 +1010,13 @@
 			baseConfigurationReference = 8F8408FA8DF0472614964C22 /* Pods-HaNoiTravel.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HaNoiTravel/HaNoiTravel.entitlements;
 				DEVELOPMENT_TEAM = 9ZZR5T4Q5D;
 				INFOPLIST_FILE = HaNoiTravel/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dreamup.HaNoiTravel;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dreamup.HaNoiPlaces;
+				PRODUCT_NAME = HaNoiPlaces;
 			};
 			name = Debug;
 		};
@@ -990,12 +1025,13 @@
 			baseConfigurationReference = 98E89EB3F93B6D26F79BB7D7 /* Pods-HaNoiTravel.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HaNoiTravel/HaNoiTravel.entitlements;
 				DEVELOPMENT_TEAM = 9ZZR5T4Q5D;
 				INFOPLIST_FILE = HaNoiTravel/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dreamup.HaNoiTravel;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dreamup.HaNoiPlaces;
+				PRODUCT_NAME = HaNoiPlaces;
 			};
 			name = Release;
 		};

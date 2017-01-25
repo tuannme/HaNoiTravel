@@ -11,7 +11,6 @@
 
 @interface PlaceMapCell()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
 
-@property (weak, nonatomic) IBOutlet MapView *mapView;
 @property (weak, nonatomic) IBOutlet UITextField *keywordTf;
 
 @end

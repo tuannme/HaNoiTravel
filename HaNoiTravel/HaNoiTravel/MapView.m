@@ -133,10 +133,7 @@
                        withSelector:selector
                        withDelegate:self];
         }
-        
     }
-    
-    
     
 }
 - (void)addDirections:(NSDictionary *)json {
@@ -208,6 +205,32 @@
     marker.map = mapView_;
     marker.title = address;
     
+}
+
+- (void) setPlaces:(NSMutableArray*)arrPlaces withIcon:(NSString*)iconName{
+    
+    UIImage *image = [self imageWithImage:[UIImage imageNamed:iconName] scaledToSize:CGSizeMake(30, 30)];
+    for(Place *place in arrPlaces){
+        
+        CLLocationCoordinate2D position = CLLocationCoordinate2DMake(place.latitude,place.longitude);
+        GMSMarker *marker = [GMSMarker markerWithPosition:position];
+        marker.title = place.name;
+        marker.icon = image;
+        marker.map = mapView_;
+        
+    }
+}
+
+- (UIImage*)imageWithImage:(UIImage*)image scaledToSize:(CGSize)newSize
+{
+    UIGraphicsBeginImageContext(newSize);
+    
+    [image drawInRect:CGRectMake(0,0,newSize.width,newSize.height)];
+    UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    
+    return newImage;
 }
 
 @end
