@@ -22,7 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [_mapView startLoadMap];
+    [_mapView startLoadMapCompletion:nil];
 }
 
 - (void)didReceiveMemoryWarning {

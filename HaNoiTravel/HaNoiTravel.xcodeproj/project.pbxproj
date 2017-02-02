@@ -16,6 +16,9 @@
 		163570571D5B02B50093CDF5 /* HaNoiTravelUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 163570561D5B02B50093CDF5 /* HaNoiTravelUITests.m */; };
 		163570661D5B0B090093CDF5 /* DirectionService.m in Sources */ = {isa = PBXBuildFile; fileRef = 163570651D5B0B090093CDF5 /* DirectionService.m */; };
 		163570691D5C24AD0093CDF5 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 163570681D5C24AD0093CDF5 /* MainViewController.m */; };
+		1A1A02D81E42F1F900A3A9E2 /* SpeechView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1A02D71E42F1F900A3A9E2 /* SpeechView.m */; };
+		1A1A02DA1E42F20800A3A9E2 /* SpeechView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A1A02D91E42F20800A3A9E2 /* SpeechView.xib */; };
+		1A1A02DC1E42F45400A3A9E2 /* ic_voice_big.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A1A02DB1E42F45400A3A9E2 /* ic_voice_big.png */; };
 		1A1F8A211E249E7300E2A0FA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1A1F8A201E249E7300E2A0FA /* GoogleService-Info.plist */; };
 		1A1F8A271E24C28B00E2A0FA /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1F8A261E24C28B00E2A0FA /* LoginViewController.m */; };
 		1A1F8A2D1E24C7E800E2A0FA /* bg_field_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A1F8A2C1E24C7E800E2A0FA /* bg_field_up.png */; };
@@ -123,6 +126,10 @@
 		163570651D5B0B090093CDF5 /* DirectionService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectionService.m; sourceTree = "<group>"; };
 		163570671D5C24AD0093CDF5 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		163570681D5C24AD0093CDF5 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		1A1A02D61E42F1F900A3A9E2 /* SpeechView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeechView.h; sourceTree = "<group>"; };
+		1A1A02D71E42F1F900A3A9E2 /* SpeechView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeechView.m; sourceTree = "<group>"; };
+		1A1A02D91E42F20800A3A9E2 /* SpeechView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpeechView.xib; sourceTree = "<group>"; };
+		1A1A02DB1E42F45400A3A9E2 /* ic_voice_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_voice_big.png; sourceTree = "<group>"; };
 		1A1F8A201E249E7300E2A0FA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1A1F8A251E24C28B00E2A0FA /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		1A1F8A261E24C28B00E2A0FA /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
@@ -302,6 +309,16 @@
 			path = HaNoiTravelUITests;
 			sourceTree = "<group>";
 		};
+		1A1A02D51E42F1D900A3A9E2 /* SiriView */ = {
+			isa = PBXGroup;
+			children = (
+				1A1A02D61E42F1F900A3A9E2 /* SpeechView.h */,
+				1A1A02D71E42F1F900A3A9E2 /* SpeechView.m */,
+				1A1A02D91E42F20800A3A9E2 /* SpeechView.xib */,
+			);
+			name = SiriView;
+			sourceTree = "<group>";
+		};
 		1A1F8A1F1E249E6500E2A0FA /* Config */ = {
 			isa = PBXGroup;
 			children = (
@@ -342,6 +359,7 @@
 		1A1F8A241E24C25900E2A0FA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1A1A02D51E42F1D900A3A9E2 /* SiriView */,
 				1A718BDF1E31B45200ABAE8B /* SegueCustom */,
 				1AE44A211E307E2F00C9A1CF /* PlaceView */,
 				1A823F161E2C749A009CDB52 /* MenuSubView */,
@@ -589,6 +607,7 @@
 		CA9159881E34C9BF001DB5CD /* Places */ = {
 			isa = PBXGroup;
 			children = (
+				1A1A02DB1E42F45400A3A9E2 /* ic_voice_big.png */,
 				CA9159891E34C9BF001DB5CD /* gas_icon.png */,
 			);
 			name = Places;
@@ -686,8 +705,14 @@
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 9ZZR5T4Q5D;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.Push = {
 								enabled = 1;
+							};
+							com.apple.Siri = {
+								enabled = 0;
 							};
 						};
 					};
@@ -735,6 +760,7 @@
 				CA42D8E81E268C0500A1F574 /* spinner_blue.png in Resources */,
 				CA91599D1E34CE92001DB5CD /* stars3.0.png in Resources */,
 				CA91599B1E34CE92001DB5CD /* stars2.0.png in Resources */,
+				1A1A02DC1E42F45400A3A9E2 /* ic_voice_big.png in Resources */,
 				1AE44A201E307DCA00C9A1CF /* ic_search.png in Resources */,
 				1AE44A4F1E30BEE600C9A1CF /* ic_back.png in Resources */,
 				1A1F8A331E25D22100E2A0FA /* ic_google.png in Resources */,
@@ -759,6 +785,7 @@
 				1A909DC01E35D4D000919395 /* ic_back_black.png in Resources */,
 				1635703C1D5B02B50093CDF5 /* Main.storyboard in Resources */,
 				1A1F8A2D1E24C7E800E2A0FA /* bg_field_up.png in Resources */,
+				1A1A02DA1E42F20800A3A9E2 /* SpeechView.xib in Resources */,
 				CA9159A11E34CE92001DB5CD /* stars5.0.png in Resources */,
 				CA9159991E34CE92001DB5CD /* stars1.0.png in Resources */,
 				CA42D8E91E268C0500A1F574 /* spinner_red.png in Resources */,
@@ -841,6 +868,7 @@
 				1A3E0E921E2893080059C6F7 /* RootViewController.m in Sources */,
 				1AE44A271E307EA400C9A1CF /* MapView.m in Sources */,
 				CA34B0231E31194400556C49 /* DUSpinnerView.m in Sources */,
+				1A1A02D81E42F1F900A3A9E2 /* SpeechView.m in Sources */,
 				163570361D5B02B50093CDF5 /* AppDelegate.m in Sources */,
 				CA9159A41E34D636001DB5CD /* GasPlaceCell.m in Sources */,
 				1A3E0E981E2893D40059C6F7 /* MenuViewController.m in Sources */,

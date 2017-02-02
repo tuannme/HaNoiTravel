@@ -55,8 +55,16 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>Your microphone will be used to record your speech</string>
+    <key>NSSpeechRecognitionUsageDescription</key>
+    <string>Allowing access to your micro, you can search by speech</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Allowing access to your location, you can spot your position on the map.</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

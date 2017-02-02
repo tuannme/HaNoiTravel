@@ -11,7 +11,7 @@
 
 @interface MapView : UIView
 
-- (void) startLoadMap;
+- (void) startLoadMapCompletion:(void(^)(BOOL done))completion;
 - (void) resetMapAtAddress:(NSString*) address;
 - (void) setPlaces:(NSMutableArray*)arrPlaces withIcon:(NSString*)iconName;
 - (void) showDirection:(BOOL)show;

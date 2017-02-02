@@ -7,7 +7,7 @@
 //
 
 #import "PlaceMapCell.h"
-
+#import "SpeechView.h"
 
 @interface PlaceMapCell()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
 
@@ -18,12 +18,13 @@
 @implementation PlaceMapCell{
     void (^searchResult)(NSString*result);
     NSMutableArray *arrFilter;
+    UIView * circleView;
 }
 
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    [_mapView startLoadMap];
+    [_mapView startLoadMapCompletion:nil];
     
     _tbView.delegate = self;
     _tbView.dataSource = self;
@@ -41,7 +42,7 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
+    
     // Configure the view for the selected state
 }
 
@@ -68,8 +69,13 @@
 }
 
 - (IBAction)voiceAction:(id)sender {
-    
+    SpeechView *speechView = [[SpeechView alloc] initWithBlock:^(NSString *result){
+        
+    }];
+    [speechView start];
 }
+
+
 
 
 #pragma mark - UITableVIew

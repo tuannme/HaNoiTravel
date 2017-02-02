@@ -15,6 +15,8 @@
 
 @interface MapView ()<GMSMapViewDelegate,CLLocationManagerDelegate>
 
+@property (strong,nonatomic) void (^completion)(BOOL done);
+
 @end
 
 @implementation MapView{
@@ -26,6 +28,7 @@
     CLLocationManager *locationManager;
     
     BOOL isShowDirection;
+    
 }
 
 - (id) initWithFrame:(CGRect)frame{
@@ -35,7 +38,9 @@
     return self;
 }
 
-- (void) startLoadMap{
+- (void) startLoadMapCompletion:(void(^)(BOOL done))completion{
+    
+    self.completion = completion;
     
     waypoints_ = [[NSMutableArray alloc]init];
     waypointStrings_ = [[NSMutableArray alloc]init];
@@ -155,10 +160,17 @@
    didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation{
     [locationManager stopUpdatingLocation];
     
-    [self getAddressWithLatitude:newLocation.coordinate.latitude longitude:newLocation.coordinate.longitude completion:^(NSString *address){
-        [self showMap:newLocation.coordinate.latitude lgn:newLocation.coordinate.longitude address:address];
-        
-    }];
+    if(self.completion == nil){
+        [self getAddressWithLatitude:newLocation.coordinate.latitude longitude:newLocation.coordinate.longitude completion:^(NSString *address){
+            [self showMap:newLocation.coordinate.latitude lgn:newLocation.coordinate.longitude address:address];
+            
+        }];
+    }else if([[User shareInstance] latitude] == 0){
+        [[User shareInstance] setLatitude:newLocation.coordinate.latitude];
+        [[User shareInstance] setLongitude:newLocation.coordinate.longitude];
+        self.completion(YES);
+    }
+    
 }
 
 - (void) getAddressWithLatitude:(CGFloat)lat longitude:(CGFloat)lgn completion:(void(^)(NSString *address))completion{

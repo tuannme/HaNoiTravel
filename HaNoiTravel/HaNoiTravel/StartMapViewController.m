@@ -28,7 +28,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [_mapView startLoadMap];
+    [_mapView startLoadMapCompletion:^(BOOL done){
+        
+        if(done){
+            [self performSegueWithIdentifier:@"nextSegue" sender:self];
+        }
+        
+    }];
     
     _districtTbView.hidden = YES;
     _wardTbView.hidden = YES;
@@ -159,7 +165,7 @@
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender{
     
     if([[User shareInstance] latitude] == 0 ){
-        [Utils showAlert:@"" message:@"Plsease choose your location !"];
+        [Utils showAlert:@"" message:@"Please choose your location !"];
         return NO;
     }
     

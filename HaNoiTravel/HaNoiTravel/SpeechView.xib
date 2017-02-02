@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2659" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SpeechView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rwU-2C-clk">
+                    <rect key="frame" x="153" y="517" width="70" height="70"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="70" id="NI5-qO-poi"/>
+                        <constraint firstAttribute="height" constant="70" id="lfo-D0-1yT"/>
+                    </constraints>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_voice_big.png" translatesAutoresizingMaskIntoConstraints="NO" id="vCc-8S-mNb">
+                    <rect key="frame" x="152" y="517" width="70" height="70"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="70" id="21O-xO-fYo"/>
+                        <constraint firstAttribute="height" constant="70" id="B2a-Iq-u5z"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="enG-TD-KjW">
+                    <rect key="frame" x="315" y="607" width="60" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="7lf-n9-dC7"/>
+                        <constraint firstAttribute="height" constant="60" id="VaU-Pe-tzt"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="18" minY="18" maxX="18" maxY="18"/>
+                    <state key="normal" image="ic_close.png"/>
+                    <connections>
+                        <action selector="closeAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="64F-V3-DNG"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speak now" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8TE-9d-F0K">
+                    <rect key="frame" x="20" y="250" width="335" height="21"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="rwU-2C-clk" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="0V6-K9-6nM"/>
+                <constraint firstItem="vCc-8S-mNb" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="63s-U0-unD"/>
+                <constraint firstItem="8TE-9d-F0K" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="Pjy-2V-o54"/>
+                <constraint firstAttribute="trailing" secondItem="enG-TD-KjW" secondAttribute="trailing" id="VBQ-CT-Ce3"/>
+                <constraint firstAttribute="bottom" secondItem="enG-TD-KjW" secondAttribute="bottom" id="hba-F2-M5R"/>
+                <constraint firstItem="8TE-9d-F0K" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="250" id="i6s-i7-eoh"/>
+                <constraint firstAttribute="bottom" secondItem="rwU-2C-clk" secondAttribute="bottom" constant="80" id="oy4-ib-btT"/>
+                <constraint firstAttribute="bottom" secondItem="vCc-8S-mNb" secondAttribute="bottom" constant="80" id="sZO-YT-SPL"/>
+                <constraint firstAttribute="trailing" secondItem="8TE-9d-F0K" secondAttribute="trailing" constant="20" id="tq9-So-QaB"/>
+            </constraints>
+            <connections>
+                <outlet property="circleView" destination="rwU-2C-clk" id="8f3-2i-gbQ"/>
+                <outlet property="resultLb" destination="8TE-9d-F0K" id="JXG-fN-9Pu"/>
+                <outlet property="voiceImv" destination="vCc-8S-mNb" id="W7P-4s-uNk"/>
+            </connections>
+            <point key="canvasLocation" x="24.5" y="52.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_close.png" width="51" height="51"/>
+        <image name="ic_voice_big.png" width="256" height="257"/>
+    </resources>
+</document>
