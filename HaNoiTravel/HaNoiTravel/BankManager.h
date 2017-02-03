@@ -1,15 +1,15 @@
 //
-//  GasManager.h
+//  BankManager.h
 //  HaNoiTravel
 //
-//  Created by Nguyen Manh Tuan on 1/22/17.
+//  Created by Dreamup on 2/3/17.
 //  Copyright © 2017 DREAMUP. All rights reserved.
 //
 
 #import "PlacesManager.h"
+#import "Bank.h"
 
-@interface GasManager : PlacesManager
 
-
+@interface BankManager : PlacesManager
 
 @end

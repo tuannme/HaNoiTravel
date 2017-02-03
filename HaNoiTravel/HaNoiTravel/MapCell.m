@@ -6,16 +6,16 @@
 //  Copyright © 2017 DREAMUP. All rights reserved.
 //
 
-#import "PlaceMapCell.h"
+#import "MapCell.h"
 #import "SpeechView.h"
 
-@interface PlaceMapCell()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
+@interface MapCell()<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *keywordTf;
 
 @end
 
-@implementation PlaceMapCell{
+@implementation MapCell{
     void (^searchResult)(NSString*result);
     NSMutableArray *arrFilter;
     UIView * circleView;

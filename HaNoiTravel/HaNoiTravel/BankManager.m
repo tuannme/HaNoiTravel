@@ -1,68 +1,65 @@
 //
-//  GasManager.m
+//  BankManager.m
 //  HaNoiTravel
 //
-//  Created by Nguyen Manh Tuan on 1/22/17.
+//  Created by Dreamup on 2/3/17.
 //  Copyright © 2017 DREAMUP. All rights reserved.
 //
 
-#import "GasManager.h"
-#import "GasStation.h"
+#import "BankManager.h"
 
-static GasManager *gasManager = nil;
+static BankManager *bankManager = nil;
 
-@interface GasManager()
+@interface BankManager ()
 
-@property (strong,nonatomic) NSMutableArray *gasPlaces;
+@property (strong,nonatomic) NSMutableArray *places;
 
 @end
 
-@implementation GasManager{
-    
-}
+@implementation BankManager
+
+
 
 +(id) shareInstance{
     
-    if(gasManager == nil){
-        gasManager = [[GasManager alloc] init];
+    if(bankManager == nil){
+        bankManager = [[BankManager alloc] init];
     }
     
-    return gasManager;
+    return bankManager;
 }
 
 - (void) getPlaceCompletion:(void(^)(NSMutableArray*))result{
     
-    if(_gasPlaces == nil){
-
+    if(_places == nil){
+        
         FIRDatabaseReference *ref = [[FIRDatabase database] reference];
         
         [[[ref child:@"Places"] child:@"Gas"] observeSingleEventOfType:FIRDataEventTypeValue withBlock:^(FIRDataSnapshot * _Nonnull snapshot) {
             
-            NSMutableArray *arrGas = [NSMutableArray array];
+            NSMutableArray *arrBanks = [NSMutableArray array];
             
             id value = snapshot.value;
             
             for(NSDictionary *dic in [value allValues]){
-                GasStation *gas = [[GasStation alloc] initWithDic:dic];
-                [arrGas addObject:gas];
+                Bank *bank = [[Bank alloc] initWithDic:dic];
+                [arrBanks addObject:bank];
             }
-       
-            _gasPlaces = [NSMutableArray arrayWithArray:[self sortDistance:arrGas]];
-            result(_gasPlaces);
+            
+            _places = [NSMutableArray arrayWithArray:[self sortDistance:arrBanks]];
+            result(_places);
             
         } withCancelBlock:^(NSError * _Nonnull error) {
             NSLog(@"%@", error);
             result(nil);
         }];
-
+        
         
     }else{
-        result(_gasPlaces);
+        result(_places);
     }
-
+    
 }
-
-
 
 
 @end

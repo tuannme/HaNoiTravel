@@ -416,7 +416,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="458"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlaceMapCell" rowHeight="240" id="j2S-oZ-m3D" customClass="PlaceMapCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MapCell" rowHeight="240" id="j2S-oZ-m3D" customClass="MapCell">
                                         <rect key="frame" x="0.0" y="28" width="320" height="240"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="j2S-oZ-m3D" id="IKY-fl-sUe">
@@ -623,7 +623,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5bO-vr-vPb">
                                                     <rect key="frame" x="5" y="5" width="310" height="130"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gas_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="wyf-jy-v8N">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_gas.png" translatesAutoresizingMaskIntoConstraints="NO" id="wyf-jy-v8N">
                                                             <rect key="frame" x="5" y="5" width="80" height="80"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="80" id="Vxn-Mj-JTm"/>
@@ -824,9 +824,9 @@
     </scenes>
     <resources>
         <image name="bg_test.jpg" width="850" height="478"/>
-        <image name="gas_icon.png" width="600" height="600"/>
         <image name="ic_back.png" width="22" height="35"/>
         <image name="ic_close.png" width="51" height="51"/>
+        <image name="ic_gas.png" width="600" height="600"/>
         <image name="ic_voice_red.png" width="128" height="128"/>
         <image name="stars4.0.png" width="416" height="72"/>
         <image name="stars4.5.png" width="416" height="72"/>

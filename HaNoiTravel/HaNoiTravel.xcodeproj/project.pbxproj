@@ -19,6 +19,9 @@
 		1A1A02D81E42F1F900A3A9E2 /* SpeechView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1A02D71E42F1F900A3A9E2 /* SpeechView.m */; };
 		1A1A02DA1E42F20800A3A9E2 /* SpeechView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A1A02D91E42F20800A3A9E2 /* SpeechView.xib */; };
 		1A1A02DC1E42F45400A3A9E2 /* ic_voice_big.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A1A02DB1E42F45400A3A9E2 /* ic_voice_big.png */; };
+		1A1A02DF1E44341100A3A9E2 /* ic_bidv.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A1A02DE1E44341100A3A9E2 /* ic_bidv.png */; };
+		1A1A02F11E44939300A3A9E2 /* BankManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1A02F01E44939300A3A9E2 /* BankManager.m */; };
+		1A1A02F41E44949E00A3A9E2 /* Bank.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1A02F31E44949E00A3A9E2 /* Bank.m */; };
 		1A1F8A211E249E7300E2A0FA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1A1F8A201E249E7300E2A0FA /* GoogleService-Info.plist */; };
 		1A1F8A271E24C28B00E2A0FA /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1F8A261E24C28B00E2A0FA /* LoginViewController.m */; };
 		1A1F8A2D1E24C7E800E2A0FA /* bg_field_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A1F8A2C1E24C7E800E2A0FA /* bg_field_up.png */; };
@@ -50,7 +53,7 @@
 		1AE44A1C1E306A1E00C9A1CF /* PromotionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE44A1B1E306A1E00C9A1CF /* PromotionViewController.m */; };
 		1AE44A1E1E307CCF00C9A1CF /* ic_voice.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AE44A1D1E307CCF00C9A1CF /* ic_voice.png */; };
 		1AE44A201E307DCA00C9A1CF /* ic_search.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AE44A1F1E307DCA00C9A1CF /* ic_search.png */; };
-		1AE44A241E307E5300C9A1CF /* PlaceMapCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE44A231E307E5300C9A1CF /* PlaceMapCell.m */; };
+		1AE44A241E307E5300C9A1CF /* MapCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE44A231E307E5300C9A1CF /* MapCell.m */; };
 		1AE44A271E307EA400C9A1CF /* MapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE44A261E307EA400C9A1CF /* MapView.m */; };
 		1AE44A4D1E30BDDC00C9A1CF /* PlaceDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AE44A4C1E30BDDC00C9A1CF /* PlaceDetailViewController.m */; };
 		1AE44A4F1E30BEE600C9A1CF /* ic_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AE44A4E1E30BEE600C9A1CF /* ic_back.png */; };
@@ -65,7 +68,7 @@
 		CA91597F1E34B7F6001DB5CD /* GasStation.m in Sources */ = {isa = PBXBuildFile; fileRef = CA91597E1E34B7F6001DB5CD /* GasStation.m */; };
 		CA9159821E34BA25001DB5CD /* PlacesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9159811E34BA25001DB5CD /* PlacesManager.m */; };
 		CA9159861E34BD70001DB5CD /* GasManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9159851E34BD70001DB5CD /* GasManager.m */; };
-		CA91598A1E34C9BF001DB5CD /* gas_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CA9159891E34C9BF001DB5CD /* gas_icon.png */; };
+		CA91598A1E34C9BF001DB5CD /* ic_gas.png in Resources */ = {isa = PBXBuildFile; fileRef = CA9159891E34C9BF001DB5CD /* ic_gas.png */; };
 		CA9159971E34CE92001DB5CD /* stars0.0.png in Resources */ = {isa = PBXBuildFile; fileRef = CA91598C1E34CE92001DB5CD /* stars0.0.png */; };
 		CA9159981E34CE92001DB5CD /* stars0.5.png in Resources */ = {isa = PBXBuildFile; fileRef = CA91598D1E34CE92001DB5CD /* stars0.5.png */; };
 		CA9159991E34CE92001DB5CD /* stars1.0.png in Resources */ = {isa = PBXBuildFile; fileRef = CA91598E1E34CE92001DB5CD /* stars1.0.png */; };
@@ -130,6 +133,11 @@
 		1A1A02D71E42F1F900A3A9E2 /* SpeechView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeechView.m; sourceTree = "<group>"; };
 		1A1A02D91E42F20800A3A9E2 /* SpeechView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpeechView.xib; sourceTree = "<group>"; };
 		1A1A02DB1E42F45400A3A9E2 /* ic_voice_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_voice_big.png; sourceTree = "<group>"; };
+		1A1A02DE1E44341100A3A9E2 /* ic_bidv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_bidv.png; sourceTree = "<group>"; };
+		1A1A02EF1E44939300A3A9E2 /* BankManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BankManager.h; sourceTree = "<group>"; };
+		1A1A02F01E44939300A3A9E2 /* BankManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BankManager.m; sourceTree = "<group>"; };
+		1A1A02F21E44949E00A3A9E2 /* Bank.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bank.h; sourceTree = "<group>"; };
+		1A1A02F31E44949E00A3A9E2 /* Bank.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bank.m; sourceTree = "<group>"; };
 		1A1F8A201E249E7300E2A0FA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1A1F8A251E24C28B00E2A0FA /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		1A1F8A261E24C28B00E2A0FA /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
@@ -177,8 +185,8 @@
 		1AE44A1B1E306A1E00C9A1CF /* PromotionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PromotionViewController.m; sourceTree = "<group>"; };
 		1AE44A1D1E307CCF00C9A1CF /* ic_voice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_voice.png; sourceTree = "<group>"; };
 		1AE44A1F1E307DCA00C9A1CF /* ic_search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_search.png; sourceTree = "<group>"; };
-		1AE44A221E307E5300C9A1CF /* PlaceMapCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceMapCell.h; sourceTree = "<group>"; };
-		1AE44A231E307E5300C9A1CF /* PlaceMapCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceMapCell.m; sourceTree = "<group>"; };
+		1AE44A221E307E5300C9A1CF /* MapCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapCell.h; sourceTree = "<group>"; };
+		1AE44A231E307E5300C9A1CF /* MapCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapCell.m; sourceTree = "<group>"; };
 		1AE44A251E307EA400C9A1CF /* MapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapView.h; sourceTree = "<group>"; };
 		1AE44A261E307EA400C9A1CF /* MapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapView.m; sourceTree = "<group>"; };
 		1AE44A4B1E30BDDC00C9A1CF /* PlaceDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceDetailViewController.h; sourceTree = "<group>"; };
@@ -206,7 +214,7 @@
 		CA9159811E34BA25001DB5CD /* PlacesManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlacesManager.m; sourceTree = "<group>"; };
 		CA9159841E34BD70001DB5CD /* GasManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GasManager.h; sourceTree = "<group>"; };
 		CA9159851E34BD70001DB5CD /* GasManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GasManager.m; sourceTree = "<group>"; };
-		CA9159891E34C9BF001DB5CD /* gas_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gas_icon.png; sourceTree = "<group>"; };
+		CA9159891E34C9BF001DB5CD /* ic_gas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_gas.png; sourceTree = "<group>"; };
 		CA91598C1E34CE92001DB5CD /* stars0.0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stars0.0.png; sourceTree = "<group>"; };
 		CA91598D1E34CE92001DB5CD /* stars0.5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stars0.5.png; sourceTree = "<group>"; };
 		CA91598E1E34CE92001DB5CD /* stars1.0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stars1.0.png; sourceTree = "<group>"; };
@@ -269,8 +277,8 @@
 			children = (
 				1A9A3B711E388428003D6A4C /* HaNoiTravel.entitlements */,
 				1A3E0E941E2893930059C6F7 /* Lib */,
-				1A1F8A241E24C25900E2A0FA /* View */,
 				1A1F8A231E24C24F00E2A0FA /* Model */,
+				1A1F8A241E24C25900E2A0FA /* View */,
 				1A1F8A221E24C24300E2A0FA /* Controller */,
 				163570341D5B02B50093CDF5 /* AppDelegate.h */,
 				163570351D5B02B50093CDF5 /* AppDelegate.m */,
@@ -319,6 +327,54 @@
 			name = SiriView;
 			sourceTree = "<group>";
 		};
+		1A1A02DD1E44223600A3A9E2 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				1AE44A251E307EA400C9A1CF /* MapView.h */,
+				1AE44A261E307EA400C9A1CF /* MapView.m */,
+			);
+			name = Map;
+			sourceTree = "<group>";
+		};
+		1A1A02E01E44369B00A3A9E2 /* ObjectModel */ = {
+			isa = PBXGroup;
+			children = (
+				1A9A3B7A1E3887F2003D6A4C /* Place.h */,
+				1A9A3B7B1E3887F2003D6A4C /* Place.m */,
+				CA91597D1E34B7F6001DB5CD /* GasStation.h */,
+				CA91597E1E34B7F6001DB5CD /* GasStation.m */,
+				1A1A02F21E44949E00A3A9E2 /* Bank.h */,
+				1A1A02F31E44949E00A3A9E2 /* Bank.m */,
+			);
+			name = ObjectModel;
+			sourceTree = "<group>";
+		};
+		1A1A02E11E4436B500A3A9E2 /* ObjectManager */ = {
+			isa = PBXGroup;
+			children = (
+				CA9159801E34BA25001DB5CD /* PlacesManager.h */,
+				CA9159811E34BA25001DB5CD /* PlacesManager.m */,
+				CA9159841E34BD70001DB5CD /* GasManager.h */,
+				CA9159851E34BD70001DB5CD /* GasManager.m */,
+				1A1A02EF1E44939300A3A9E2 /* BankManager.h */,
+				1A1A02F01E44939300A3A9E2 /* BankManager.m */,
+			);
+			name = ObjectManager;
+			sourceTree = "<group>";
+		};
+		1A1A02E21E4436C700A3A9E2 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				163570641D5B0B090093CDF5 /* DirectionService.h */,
+				163570651D5B0B090093CDF5 /* DirectionService.m */,
+				CA42D8DA1E266C7800A1F574 /* NSString+Utils.h */,
+				CA42D8DB1E266C7800A1F574 /* NSString+Utils.m */,
+				CA42D8DD1E266CE800A1F574 /* Utils.h */,
+				CA42D8DE1E266CE800A1F574 /* Utils.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
 		1A1F8A1F1E249E6500E2A0FA /* Config */ = {
 			isa = PBXGroup;
 			children = (
@@ -344,12 +400,6 @@
 			isa = PBXGroup;
 			children = (
 				CA9159831E34BD4D001DB5CD /* Places */,
-				163570641D5B0B090093CDF5 /* DirectionService.h */,
-				163570651D5B0B090093CDF5 /* DirectionService.m */,
-				CA42D8DA1E266C7800A1F574 /* NSString+Utils.h */,
-				CA42D8DB1E266C7800A1F574 /* NSString+Utils.m */,
-				CA42D8DD1E266CE800A1F574 /* Utils.h */,
-				CA42D8DE1E266CE800A1F574 /* Utils.m */,
 				1A823F211E2C7A67009CDB52 /* User.h */,
 				1A823F221E2C7A67009CDB52 /* User.m */,
 			);
@@ -359,6 +409,7 @@
 		1A1F8A241E24C25900E2A0FA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1A1A02DD1E44223600A3A9E2 /* Map */,
 				1A1A02D51E42F1D900A3A9E2 /* SiriView */,
 				1A718BDF1E31B45200ABAE8B /* SegueCustom */,
 				1AE44A211E307E2F00C9A1CF /* PlaceView */,
@@ -503,10 +554,8 @@
 		1AE44A211E307E2F00C9A1CF /* PlaceView */ = {
 			isa = PBXGroup;
 			children = (
-				1AE44A221E307E5300C9A1CF /* PlaceMapCell.h */,
-				1AE44A231E307E5300C9A1CF /* PlaceMapCell.m */,
-				1AE44A251E307EA400C9A1CF /* MapView.h */,
-				1AE44A261E307EA400C9A1CF /* MapView.m */,
+				1AE44A221E307E5300C9A1CF /* MapCell.h */,
+				1AE44A231E307E5300C9A1CF /* MapCell.m */,
 				1A718BE01E31E3F600ABAE8B /* PlaceCell.h */,
 				1A718BE11E31E3F600ABAE8B /* PlaceCell.m */,
 				CA9159A21E34D636001DB5CD /* GasPlaceCell.h */,
@@ -592,14 +641,9 @@
 		CA9159831E34BD4D001DB5CD /* Places */ = {
 			isa = PBXGroup;
 			children = (
-				1A9A3B7A1E3887F2003D6A4C /* Place.h */,
-				1A9A3B7B1E3887F2003D6A4C /* Place.m */,
-				CA91597D1E34B7F6001DB5CD /* GasStation.h */,
-				CA91597E1E34B7F6001DB5CD /* GasStation.m */,
-				CA9159801E34BA25001DB5CD /* PlacesManager.h */,
-				CA9159811E34BA25001DB5CD /* PlacesManager.m */,
-				CA9159841E34BD70001DB5CD /* GasManager.h */,
-				CA9159851E34BD70001DB5CD /* GasManager.m */,
+				1A1A02E21E4436C700A3A9E2 /* Utils */,
+				1A1A02E11E4436B500A3A9E2 /* ObjectManager */,
+				1A1A02E01E44369B00A3A9E2 /* ObjectModel */,
 			);
 			name = Places;
 			sourceTree = "<group>";
@@ -607,8 +651,9 @@
 		CA9159881E34C9BF001DB5CD /* Places */ = {
 			isa = PBXGroup;
 			children = (
+				1A1A02DE1E44341100A3A9E2 /* ic_bidv.png */,
 				1A1A02DB1E42F45400A3A9E2 /* ic_voice_big.png */,
-				CA9159891E34C9BF001DB5CD /* gas_icon.png */,
+				CA9159891E34C9BF001DB5CD /* ic_gas.png */,
 			);
 			name = Places;
 			path = Resource/Places;
@@ -769,6 +814,7 @@
 				1A1F8A211E249E7300E2A0FA /* GoogleService-Info.plist in Resources */,
 				1A1F8A321E25D22100E2A0FA /* ic_facebook.png in Resources */,
 				1635703E1D5B02B50093CDF5 /* Assets.xcassets in Resources */,
+				1A1A02DF1E44341100A3A9E2 /* ic_bidv.png in Resources */,
 				1A9A3B791E3886CD003D6A4C /* ic_60.png in Resources */,
 				1A1F8A2F1E24CA4200E2A0FA /* bg_field_down.png in Resources */,
 				CA91599E1E34CE92001DB5CD /* stars3.5.png in Resources */,
@@ -777,7 +823,7 @@
 				1A823F181E2C74DA009CDB52 /* MenuHeader.xib in Resources */,
 				CA42D8D91E26615A00A1F574 /* ic_close_blue.png in Resources */,
 				1A909DBD1E35A92A00919395 /* Account.storyboard in Resources */,
-				CA91598A1E34C9BF001DB5CD /* gas_icon.png in Resources */,
+				CA91598A1E34C9BF001DB5CD /* ic_gas.png in Resources */,
 				1AE44A1E1E307CCF00C9A1CF /* ic_voice.png in Resources */,
 				1A9A3B771E3886CD003D6A4C /* ic_120.png in Resources */,
 				CA91599F1E34CE92001DB5CD /* stars4.0.png in Resources */,
@@ -873,6 +919,7 @@
 				CA9159A41E34D636001DB5CD /* GasPlaceCell.m in Sources */,
 				1A3E0E981E2893D40059C6F7 /* MenuViewController.m in Sources */,
 				1AE44A1C1E306A1E00C9A1CF /* PromotionViewController.m in Sources */,
+				1A1A02F11E44939300A3A9E2 /* BankManager.m in Sources */,
 				163570331D5B02B50093CDF5 /* main.m in Sources */,
 				CA9159861E34BD70001DB5CD /* GasManager.m in Sources */,
 				1A823F1B1E2C74ED009CDB52 /* MenuHeader.m in Sources */,
@@ -882,13 +929,14 @@
 				163570691D5C24AD0093CDF5 /* MainViewController.m in Sources */,
 				163570661D5B0B090093CDF5 /* DirectionService.m in Sources */,
 				1AE44A4D1E30BDDC00C9A1CF /* PlaceDetailViewController.m in Sources */,
-				1AE44A241E307E5300C9A1CF /* PlaceMapCell.m in Sources */,
+				1AE44A241E307E5300C9A1CF /* MapCell.m in Sources */,
 				1A1F8A271E24C28B00E2A0FA /* LoginViewController.m in Sources */,
 				1A909DBB1E35A5B300919395 /* StartMapViewController.m in Sources */,
 				1A9A3B7C1E3887F2003D6A4C /* Place.m in Sources */,
 				1A823F1F1E2C7615009CDB52 /* MenuCell.m in Sources */,
 				CA9159821E34BA25001DB5CD /* PlacesManager.m in Sources */,
 				1A823F231E2C7A67009CDB52 /* User.m in Sources */,
+				1A1A02F41E44949E00A3A9E2 /* Bank.m in Sources */,
 				1A2793B61E28D1EC00F15658 /* PlaceViewController.m in Sources */,
 				CA42D8DC1E266C7800A1F574 /* NSString+Utils.m in Sources */,
 			);

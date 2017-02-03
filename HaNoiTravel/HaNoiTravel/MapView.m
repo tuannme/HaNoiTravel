@@ -26,7 +26,7 @@
     NSMutableArray *waypoints_;
     NSMutableArray *waypointStrings_;
     CLLocationManager *locationManager;
-    
+    GMSMarker *myMarker;
     BOOL isShowDirection;
     
 }
@@ -49,6 +49,12 @@
     locationManager.delegate = self;
     locationManager.distanceFilter = kCLDistanceFilterNone;
     locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters; // 100 m
+    
+    myMarker = [[GMSMarker alloc] init];
+    
+    mapView_ = [[GMSMapView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
+    mapView_.delegate = self;
+    [self addSubview:mapView_];
     
     if ([locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
         [locationManager requestWhenInUseAuthorization];
@@ -109,11 +115,12 @@
 - (void)mapView:(GMSMapView *)mapView didTapAtCoordinate:(CLLocationCoordinate2D)coordinate {
     
     if(!isShowDirection){
-        [mapView_ clear];
+        
         [[User shareInstance] setLatitude:coordinate.latitude];
         [[User shareInstance] setLongitude:coordinate.longitude];
         [self getAddressWithLatitude:coordinate.latitude longitude:coordinate.longitude completion:^(NSString *address){
-            [self showMap:coordinate.latitude lgn:coordinate.longitude address:address];
+            //[mapView_ clear];
+             [self showMap:coordinate.latitude lgn:coordinate.longitude address:address];
         }];
         
     }else{
@@ -162,6 +169,7 @@
     
     if(self.completion == nil){
         [self getAddressWithLatitude:newLocation.coordinate.latitude longitude:newLocation.coordinate.longitude completion:^(NSString *address){
+            
             [self showMap:newLocation.coordinate.latitude lgn:newLocation.coordinate.longitude address:address];
             
         }];
@@ -204,29 +212,27 @@
 }
 
 - (void) showMap:(CGFloat)lat lgn:(CGFloat)lgn address:(NSString*)address{
-    [mapView_ clear];
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:lat
                                                             longitude:lgn
-                                                                 zoom:17];
-    mapView_ = [GMSMapView mapWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height) camera:camera];
-    mapView_.delegate = self;
-    [self addSubview:mapView_];
+                                                                 zoom:12];
     
-    CLLocationCoordinate2D position = CLLocationCoordinate2DMake(lat,lgn);
-    GMSMarker *marker = [GMSMarker markerWithPosition:position];
-    marker.map = mapView_;
-    marker.title = address;
+    mapView_.camera = camera;
+    myMarker.position = CLLocationCoordinate2DMake(lat,lgn);;
+    myMarker.map = mapView_;
+    myMarker.title = address;
+    
     
 }
 
+
 - (void) setPlaces:(NSMutableArray*)arrPlaces withIcon:(NSString*)iconName{
     
-    UIImage *image = [self imageWithImage:[UIImage imageNamed:iconName] scaledToSize:CGSizeMake(30, 30)];
+    UIImage *image = [self imageWithImage:[UIImage imageNamed:iconName] scaledToSize:CGSizeMake(20, 20)];
     for(Place *place in arrPlaces){
         
         CLLocationCoordinate2D position = CLLocationCoordinate2DMake(place.latitude,place.longitude);
         GMSMarker *marker = [GMSMarker markerWithPosition:position];
-        marker.title = place.name;
+        marker.snippet = [NSString stringWithFormat:@"%@\n%@",place.name,place.address];
         marker.icon = image;
         marker.map = mapView_;
         

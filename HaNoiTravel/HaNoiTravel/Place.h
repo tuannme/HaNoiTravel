@@ -17,7 +17,14 @@
 @property (assign,nonatomic) CGFloat longitude;
 @property (assign,nonatomic) NSInteger star;
 
+@property (strong,nonatomic) NSString *address;
+
 @property (assign,nonatomic) CGFloat distance;
 @property (strong,nonatomic) NSString *distanceStr;
+
+@property (strong,nonatomic) NSString *time;
+
+- (id) initWithDic:(NSDictionary*)dic;
+
 
 @end

@@ -8,7 +8,7 @@
 
 #import "PlaceDetailViewController.h"
 #import "MapView.h"
-
+#import "GasManager.h"
 
 @interface PlaceDetailViewController ()
 
@@ -23,6 +23,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [_mapView startLoadMapCompletion:nil];
+
+}
+
+- (void) viewDidAppear:(BOOL)animated{
+    [super viewDidAppear: animated];
+    [[GasManager shareInstance] getPlaceCompletion:^(NSMutableArray *result){
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [_mapView setPlaces:result withIcon:@"ic_gas.png"];
+        });
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

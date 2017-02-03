@@ -7,10 +7,11 @@
 //
 
 #import "PlaceViewController.h"
-#import "PlaceMapCell.h"
+#import "MapCell.h"
 #import "PlaceCell.h"
 #import "GasPlaceCell.h"
 #import "GasManager.h"
+#import "BankManager.h"
 #import <FirebaseDatabase/FirebaseDatabase.h>
 #import <FirebaseAuth/FirebaseAuth.h>
 
@@ -24,17 +25,18 @@
     
     CGFloat frameW;
     CGFloat frameH;
-    PlaceMapCell *placeMapCell;
+    MapCell *placeMapCell;
     Places cureentPlaces;
 
-    NSMutableArray *arrGas;
+    NSMutableArray *arrResult;
+    
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     frameW = [[UIScreen mainScreen] bounds].size.width;
     frameH = [[UIScreen mainScreen] bounds].size.height;
-    placeMapCell = [_tbView dequeueReusableCellWithIdentifier:@"PlaceMapCell"];
+    placeMapCell = [_tbView dequeueReusableCellWithIdentifier:@"MapCell"];
     placeMapCell.delegate = self;
     [placeMapCell searchCompletion:^(NSString *result){
         
@@ -43,14 +45,25 @@
     _tbView.estimatedRowHeight = 240;
     _tbView.rowHeight = UITableViewAutomaticDimension;
     
-    GasManager *gasManager = [[GasManager alloc] init];
-    [gasManager getPlaceCompletion:^(NSMutableArray *result){
-        arrGas = result;
+    [[GasManager shareInstance] getPlaceCompletion:^(NSMutableArray *result){
+        arrResult = result;
         dispatch_async(dispatch_get_main_queue(), ^{
-            [placeMapCell.mapView setPlaces:arrGas withIcon:@"gas_icon.png"];
+            [placeMapCell.mapView setPlaces:arrResult withIcon:@"ic_gas.png"];
             [self.tbView reloadData];
         });
     }];
+    
+    [[BankManager shareInstance] getPlaceCompletion:^(NSMutableArray *result){
+        //arrGas = result;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [placeMapCell.mapView setPlaces:arrResult withIcon:@"ic_bidv.png"];
+            [self.tbView reloadData];
+        });
+    }];
+    
+    
+    
+    
     
 }
 
@@ -80,7 +93,7 @@
     
     switch (cureentPlaces) {
         case GAS:
-            return arrGas.count;
+            return arrResult.count;
             break;
         default:
             return 10;
@@ -101,7 +114,7 @@
     switch (cureentPlaces) {
         case GAS:
             cell = [_tbView dequeueReusableCellWithIdentifier:@"GasPlaceCell"];
-            [(GasPlaceCell*)cell configWithGasStatin:[arrGas objectAtIndex:indexPath.row]];
+            [(GasPlaceCell*)cell configWithGasStatin:[arrResult objectAtIndex:indexPath.row]];
             break;
             
         default:

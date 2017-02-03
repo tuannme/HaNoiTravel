@@ -22,7 +22,7 @@ typedef enum{
 
 @end
 
-@interface PlaceMapCell : UITableViewCell
+@interface MapCell : UITableViewCell
 
 @property (weak,nonatomic) id<PlaceMapCellDelegate> delegate;
 @property (weak, nonatomic) IBOutlet MapView *mapView;

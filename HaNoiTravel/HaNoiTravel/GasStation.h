@@ -12,10 +12,6 @@
 
 @interface GasStation : Place
 
-- (id) initWithDic:(NSDictionary*)dic;
 
-
-@property (strong,nonatomic) NSString *address;
-@property (strong,nonatomic) NSString *time;
 
 @end
