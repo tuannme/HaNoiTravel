@@ -20,8 +20,6 @@
 @end
 
 @implementation MapView{
-    CGFloat frameW;
-    CGFloat frameH;
     GMSMapView *mapView_;
     NSMutableArray *waypoints_;
     NSMutableArray *waypointStrings_;
@@ -31,12 +29,6 @@
     
 }
 
-- (id) initWithFrame:(CGRect)frame{
-    self = [super initWithFrame: frame];
-    frameW = frame.size.width;
-    frameH = frame.size.height;
-    return self;
-}
 
 - (void) startLoadMapCompletion:(void(^)(BOOL done))completion{
     
@@ -52,7 +44,7 @@
     
     myMarker = [[GMSMarker alloc] init];
     
-    mapView_ = [[GMSMapView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
+    mapView_ = [[GMSMapView alloc] initWithFrame:UIScreen.mainScreen.bounds];
     mapView_.delegate = self;
     [self addSubview:mapView_];
     

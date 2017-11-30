@@ -748,7 +748,7 @@
 				TargetAttributes = {
 					1635702D1D5B02B50093CDF5 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = 9ZZR5T4Q5D;
+						DevelopmentTeam = USQFGC88U6;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -1087,7 +1087,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HaNoiTravel/HaNoiTravel.entitlements;
-				DEVELOPMENT_TEAM = 9ZZR5T4Q5D;
+				DEVELOPMENT_TEAM = USQFGC88U6;
 				INFOPLIST_FILE = HaNoiTravel/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1102,7 +1102,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = HaNoiTravel/HaNoiTravel.entitlements;
-				DEVELOPMENT_TEAM = 9ZZR5T4Q5D;
+				DEVELOPMENT_TEAM = USQFGC88U6;
 				INFOPLIST_FILE = HaNoiTravel/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
